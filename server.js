@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join('public')));
 
+const hangman = require('./routes/hangman')
+app.use('/hangman', hangman);
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
