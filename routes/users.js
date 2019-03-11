@@ -36,4 +36,14 @@ router.post('/', (req, res, next) => {
     })
 });
 
+router.delete('/:id', (req, res, next) => {
+  const id = req.params.id;
+
+  knex('users')
+    .del(['id', 'name', 'email', 'created_at', 'updated_at'])
+    .where('users.id', id)
+    .then(user => res.send(user[0]))
+  .catch(err => next(err));
+});
+
 module.exports = router;
