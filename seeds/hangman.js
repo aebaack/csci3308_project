@@ -18,8 +18,8 @@ exports.seed = (knex, Promise) => {
           seeds.push(
             knex('hangman').insert({
               id: counter++,
-              category: values[0],
-              puzzle: values[1]
+              puzzle: values[0],
+              category: values[1],
             })
           );
         }
