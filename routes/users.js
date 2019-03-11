@@ -18,4 +18,22 @@ router.get('/:id', (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.post('/', (req, res, next) => {
+  const { name, email, password } = req.body;
+
+  bcrypt.hash(password, 10)
+    .then(hpass => {
+      return knex('users')
+        .insert({
+          name,
+          email,
+          'hashed_password': hpass,
+        })
+        .returning(['id', 'name', 'email', 'created_at', 'updated_at'])
+    })
+    .then(user => {
+      return res.redirect('index.html');
+    })
+});
+
 module.exports = router;
