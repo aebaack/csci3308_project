@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/aebaack/csci3308_project#readme",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "knex": "^0.16.3",

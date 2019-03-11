@@ -3,7 +3,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const knex = require('./knex');
 
 require('dotenv').config();
 
