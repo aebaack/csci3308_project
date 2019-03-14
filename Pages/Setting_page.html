@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Nav bar with Log out -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<span class="navbar-brand d-flex flex-fill">UpRight</span>
+      <div class="form-inline navbar-right">
+  			<span class="navbar-text d-flex flex-fill">User:<!--UserName--></span> <!--Should Link to Setting Page-->
+        &nbsp;
+        &nbsp;
+  			<form action="URlogin.html"><!--Need to Clean Cookie and Log out-->
+				<button class="btn btn-outline-light" type="submit" value="submit">Log Out</button>
+			</form>
+  		</div>
+	</nav>
+      <br>
+      <br>
+    <div class="container">
+      <div class ="card">
+		      <h1 class="text-center card-header">General Settings</h1>
+        <div class ="row">
+          <div class = "col-md-3">
+            <br/>
+            <a class="btn btn-info btn-block" herf="Setting_page.html">General Setting</a>
+            <a class="btn btn-info btn-block" herf="Alarm_setting.html">Edit Alarm</a>
+          </div>
+          <div class = "col-md-9">
+            <br/>
+            <div class="container-fluid">
+              <div class="card">
+                <div class="card-header">
+                  Snooze Length
+                </div>
+                <div class="form-check form-inline">
+                  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snoozeSelect5" value="15" required>
+                  <label class="form-check-label" for="snoozeSelect5">
+                  5 min
+                  </label>
+                </div>
+                <div class="form-check form-inline">
+                  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snoozeSelect10" value="15" required>
+                  <label class="form-check-label" for="snoozeSelect10">
+                  10 min
+                  </label>
+                </div>
+                <div class="form-check form-inline">
+                  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snoozeSelect15" value="15" required>
+                  <label class="form-check-label" for="snoozeSelect15">
+                  15 min
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div class="container-fluid">
+              <div class="card">
+                <div class="card-header">
+                  API Settings
+                </div>
+                  <div class="form-check form-inline">
+      					  <input class="form-check-input" type="checkbox" value="" id="API1">
+      					  <label class="form-check-label" for="API1">
+      					    API Option 1
+      					  </label>
+      				  	</div>
+      				  	<div class="form-check form-inline">
+      					  <input class="form-check-input" type="checkbox" value="" id="API2">
+      					  <label class="form-check-label" for="API2">
+      					    API Option 2
+      					  </label>
+      				  	</div>
+      				  	<div class="form-check form-inline">
+      					  <input class="form-check-input" type="checkbox" value="" id="API3">
+      					  <label class="form-check-label" for="API3">
+      					    API Option 3
+      					  </label>
+      				  	</div>
+      				  	<div class="form-check form-inline">
+      					  <input class="form-check-input" type="checkbox" value="" id="API4">
+      					  <label class="form-check-label" for="API4">
+      					    API Option 4
+      					  </label>
+      				  	</div>
+      				  	<div class="form-check form-inline">
+      					  <input class="form-check-input" onclick="forbbiden('API1','API2','API3','API4')" type="checkbox" value="" id="APIN">
+      					  <label class="form-check-label" for="APIN">
+      					    None
+      					  </label>
+      				  	</div>
+                </div>
+            </div>
+            <br/>
+            <div class="container-fluid">
+              <div class="card">
+                <div class="card-header">
+                  Change Password
+                </div>
+                <div class = "form-gropu form-inline row">
+                  <label  class="col-sm-4 col-form-label" for="passwordFirst">Current Password</label>
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control"id="passwordFirst" name="passwordFirst" placeholder="Password">
+                  </div>
+                  <label  class="col-sm-4 col-form-label" for="passwordSec">New Password</label>
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control" id="passwordSec" name="passwordSec" placeholder="Password">
+                  </div>
+                  <label  class="col-sm-4 col-form-label" for="passwordThird">Verify New Password</label>
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control" id="passwordThird" name="passwordThird" placeholder="Password">
+                  </div>
+                  <div class="col-sm-11">
+                    <button  style="float:right" type="submit" class="btn btn-success btn-inline">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
