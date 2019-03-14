@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    	<title>HANGMAN</title>
+	<link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon'/>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  
+	<link href="../resources/css/my_style.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+		<br>
+		<div class="card">
+			<div class="card-header text-center"><h1>EXAMPLE CLUE</h1></div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<td><div class="tile" id=t1><h1>_</h1></div></td>
+							<td><div class="tile" id=t2><h1>_</h1></div></td>
+							<td><div class="tile" id=t3><h1>_</h1></div></td>
+							<td><div class="tile" id=t4><h1>_</h1></div></td>
+							<td><div class="tile" id=t5><h1></h1></div></td>
+							<td><div class="tile" id=t6><h1>_</h1></div></td>
+							<td><div class="tile" id=t7><h1>_</h1></div></td>
+							<td><div class="tile" id=t8><h1>_</h1></div></td>
+							<td><div class="tile" id=t9><h1>_</h1></div></td>
+						</tr>
+						<tr>
+							<td><div class="tile" id=t10><h1>_</h1></div></td>
+							<td><div class="tile" id=t11><h1>_</h1></div></td>
+							<td><div class="tile" id=t12><h1></h1></div></td>
+							<td><div class="tile" id=t13><h1>_</h1></div></td>
+							<td><div class="tile" id=t14><h1>_</h1></div></td>
+							<td><div class="tile" id=t15><h1>_</h1></div></td>
+							<td><div class="tile" id=t16><h1>_</h1></div></td>
+							<td><div class="tile" id=t17><h1>_</h1></div></td>
+							<td><div class="tile" id=t18><h1>_</h1></div></td>
+						</tr>
+					</table>
+				</div>
+			</div> 
+			<div class="card-footer">
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<td><button type="button" class="btn btn-success active"><h3>A</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>B</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>C</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>D</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>E</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>F</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>G</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>H</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>I</h3></button></td>
+						</tr>
+						<tr>
+							<td><button type="button" class="btn btn-success active"><h3>J</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>K</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>L</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>M</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>N</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>O</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>P</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>Q</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>R</h3></button></td>
+						</tr>
+						<tr>
+							<td><button type="button" class="btn btn-success active"><h3>S</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>T</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>U</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>V</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>W</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>X</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>Y</h3></button></td>
+							<td><button type="button" class="btn btn-success active"><h3>Z</h3></button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		<br>	
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="../resources/js/my_scripts.js"></script>
+	</body>
+</html>
