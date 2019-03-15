@@ -1,7 +1,12 @@
 module.exports = {
   development: { 
     client: 'pg',
-    connection: 'postgres://localhost/hangman_db',
+    connection: {
+      host: 'localhost',
+      user: 'postgres',
+      password: 'password',
+      database: 'hangman_db',
+    }
   },
   production: {
     client: 'pg',
