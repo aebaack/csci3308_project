@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 const bcrypt = require('bcrypt');
+const passport = require('../auth/local');
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
@@ -32,7 +33,11 @@ router.post('/', (req, res, next) => {
         .returning(['id', 'name', 'email', 'created_at', 'updated_at'])
     })
     .then(user => {
-      return res.redirect('./html/hangman.html');
+      passport.authenticate('local', (err, user, info) => {
+        if (user) {
+          return res.redirect('./html/hangman.html');
+        }
+      })(req, res, next);
     })
 });
 
