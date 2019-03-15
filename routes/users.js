@@ -19,6 +19,27 @@ router.get('/:id', (req, res, next) => {
     .catch(err => next(err));
 });
 
+// Log a user in
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      res.status(500).send('Server error');
+    }
+    if (!user) {
+      res.status(404).send('No user found');
+    }
+    if (user) {
+      req.logIn(user, (err) => {
+        if (err) {
+          res.status(500).send('Login error');
+        }
+        res.status(200).send('Login successful');
+      });
+    }
+  })(req, res, next);
+})
+
+// Create a new user
 router.post('/', (req, res, next) => {
   const { fullName, emailAddress, passwordFirst } = req.body;
   
