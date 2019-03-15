@@ -12,7 +12,7 @@ exports.seed = (knex, Promise) => {
       let counter = 1; // Keep counter outside of forEach because index might be skipped
       
       // Turn CSV values into array of knex inserts
-      puzzles.split('\n').slice(1).forEach((p, i) => {
+      puzzles.split('\n').slice(1, 7000).forEach((p, i) => {
         const values = p.split(',');
         if (valid.test(values[0]) && valid.test(values[1])) { // Valid puzzle and category
           seeds.push(
