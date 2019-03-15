@@ -49,6 +49,11 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 })
 
+router.get('/logout', isLoggedIn, (req, res, next) => {
+  req.logOut();
+  res.redirect('/');
+});
+
 router.get('/:id', isLoggedIn, (req, res, next) => {
   const id = req.params.id;
 
