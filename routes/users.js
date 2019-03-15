@@ -23,13 +23,16 @@ router.post('/', (req, res, next) => {
     .then(user => {
       passport.authenticate('local', (err, user, info) => {
         if (user) {
-          return res.redirect('./html/hangman.html');
+          req.logIn(user, (err) => {
+            return res.redirect('/html/hangman.html');
+          })
         }
       })(req, res, next);
     })
 });
 
 // Log a user in
+// Returns user information
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
@@ -43,23 +46,25 @@ router.post('/login', (req, res, next) => {
         if (err) {
           res.status(500).send('Login error');
         }
-        res.status(200).send('Login successful');
+
+        delete user.hashed_password;
+        res.status(200).send(user);
       });
     }
   })(req, res, next);
 })
 
+// Log a user out
 router.get('/logout', isLoggedIn, (req, res, next) => {
   req.logOut();
   res.redirect('/');
 });
 
-router.get('/:id', isLoggedIn, (req, res, next) => {
-  const id = req.params.id;
-
+// Returns the current user's information
+router.get('/', isLoggedIn, (req, res, next) => {
   knex('users')
     .select(['id', 'name', 'email', 'created_at', 'updated_at'])
-    .where('users.id', id)
+    .where('users.id', req.user.id)
     .first()
     .then(user => {
       res.send(user);
@@ -67,16 +72,20 @@ router.get('/:id', isLoggedIn, (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.delete('/:id', (req, res, next) => {
-  const id = req.params.id;
-
+// Deletes currently signed in user
+// Returns the user information
+router.delete('/', isLoggedIn, (req, res, next) => {
   knex('users')
     .del(['id', 'name', 'email', 'created_at', 'updated_at'])
-    .where('users.id', id)
-    .then(user => res.send(user[0]))
+    .where('users.email', req.user.email)
+    .then(user => {
+      req.logOut();
+      res.send(user[0]);
+    })
   .catch(err => next(err));
 });
 
+// Middleware for detecting if a user is logged in
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
