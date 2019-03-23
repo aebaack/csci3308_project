@@ -74,3 +74,33 @@ Tenor GIF Database API:
 	Random Cute GIF: https://api.tenor.com/v1/random?q=cute&key=DUOD1ML0KJP3&limit=1&ar_range=standard
 
 	For attribution, include the Tenor Logo.jpg under or in the corner of the GIF
+
+Top Reddit:
+
+	Did not find the direct API address. We can use JSON to achieve the way.
+
+	$.getJSON('https://www.reddit.com/r/all/top.json',function(data){
+		var $title ="";  //get content
+		$(data.data.children).each(function() {
+			$title += "<li><a class='title' target='_blank' herf='https://www.reddit.com/" + this.data.permalink + "'>" + this.data.title + "</a></br>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
+		});
+	$title = "<ul>" + $title + "</ul>";
+	document.getElementById('The ID in pages').innerHTML = $title;
+	});
+
+Snow Report:
+
+	Structure:api/snowreport/{resort_id}?app_id={APP_ID}&app_key={APP_KEY}
+		  api/resortforecast/{resort_id}?app_id={APP_ID}&app_key={APP_KEY}
+
+	examples: https://api.weatherunlocked.com/api/snowreport/999001?app_id={APP_ID}&app_key={APP_KEY}
+		  https://api.weatherunlocked.com/api/resortforecast/999001?app_id={APP_ID}&app_key={APP_KEY}
+
+	resource page: https://developer.weatherunlocked.com/documentation/skiresort
+
+stock:
+
+	Use Alpha Vantage to get the daily stock infomation
+	For example:https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo
+	It is easy to use, but needs a apikey. It is free, we can apply if we want.
+	Resource page: https://www.alphavantage.co/documentation/
