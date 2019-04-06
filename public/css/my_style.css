@@ -1,20 +1,3 @@
-/*.zoom {
-  padding: 50px;
-  transition: transform .2s; /* Animation
-  margin: 0 auto;
-}
-
-
-.zoom:hover {
-  transform: scale(1.5);
-  position:relative;
-  margin: auto;
-  width: 100%;
-  border: 3px solid green;
-  padding: 25px;
-  z-index: 1;
-}
-*/
 
  /* The Overlay (background) */
 .overlay {
