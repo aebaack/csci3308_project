@@ -14,30 +14,35 @@ exports.seed = (knex, Promise) => {
           name: 'Aidan',
           email: 'aidan@3308.com',
           hashed_password: hpass,
+          snooze: 5,
         },
         {
           id: 2,
           name: 'Jake',
           email: 'jake@3308.com',
           hashed_password: hpass,
+          snooze: 10,
         },
         {
           id: 3,
           name: 'Nick',
           email: 'nick@3308.com',
           hashed_password: hpass,
+          snooze: 15,
         },
         {
           id: 4,
           name: 'Adam',
           email: 'adam@3308.com',
           hashed_password: hpass,
+          snooze: 20,
         },
         {
           id: 5,
           name: 'Yicheng',
           email: 'yicheng@3308.com',
           hashed_password: hpass,
+          snooze: 25,
         },
       ]);
     })
