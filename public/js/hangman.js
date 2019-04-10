@@ -4,15 +4,10 @@ var d = new Date();
 var start_time = d.getTime();
 console.log("start time = " + start_time);
 var end_time;
-// var audio = new Audio();
-// audio.src = "../js/alarm.mp3";
-// audio.load();
-
 
 window.onload = function() {
     document.getElementById("my_audio").play();
 }
-
 
 $(document).ready(() => {
 	$.get('/hangman', (data) => {
@@ -71,26 +66,8 @@ $(document).ready(() => {
 		}
 		row += "</tr>";
 		$("#keyboard").html(row);
-		//audio.load();
-		// setTimeout(function() {
-  //   		audio.play();
-		// }, 0);
-		// var playPromise = audio.play();
-
-		//   if (playPromise !== undefined) {
-		//     playPromise.then(_ => {
-		//       // Automatic playback started!
-		//       console.log("audio should be playing");
-		//     })
-		//     .catch(error => {
-		//       // Auto-play was prevented
-		//       console.log("did not play audio");
-		//     });
-		//   }
-		// $("#my_audio").get(0).play();
 	})
 })
-
 
 function letter_check(let) {
 	var matches = document.getElementsByClassName(let);
@@ -121,7 +98,7 @@ function letter_check(let) {
 			console.log("wrong_lets = " + wrong_lets);
 			var score = 50 - (total_time/1000) - wrong_lets;
 			alert("Alarm Deactivated: You earned " + Math.round(score) + " points.");
-			location.href = "Setting_page.html";
+			location.href = "APItest.html";
 		}
 	})
 }
