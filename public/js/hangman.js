@@ -1,7 +1,25 @@
+var letters_left = 0;
+var wrong_lets = 0;
+var d = new Date();
+var start_time = d.getTime();
+console.log("start time = " + start_time);
+var end_time;
+// var audio = new Audio();
+// audio.src = "../js/alarm.mp3";
+// audio.load();
+
+
+window.onload = function() {
+    document.getElementById("my_audio").play();
+}
+
+
 $(document).ready(() => {
 	$.get('/hangman', (data) => {
 		console.log(data);
 		puzz = data.puzzle + " ";
+		window.letters_left = puzz.replace(/\s/g, "").length;
+		console.log("letters_left = " + window.letters_left);
 		console.log(puzz);
 		clue = data.category;
 		console.log(clue);
@@ -29,7 +47,7 @@ $(document).ready(() => {
 				i++;
 			}
 			row += "</tr>";
-			puzz = puzz.substring(ind, puzz.length);
+			puzz = puzz.substring(ind + 1, puzz.length);
 			console.log(puzz);
 			ind = 0;
 		}
@@ -53,6 +71,23 @@ $(document).ready(() => {
 		}
 		row += "</tr>";
 		$("#keyboard").html(row);
+		//audio.load();
+		// setTimeout(function() {
+  //   		audio.play();
+		// }, 0);
+		// var playPromise = audio.play();
+
+		//   if (playPromise !== undefined) {
+		//     playPromise.then(_ => {
+		//       // Automatic playback started!
+		//       console.log("audio should be playing");
+		//     })
+		//     .catch(error => {
+		//       // Auto-play was prevented
+		//       console.log("did not play audio");
+		//     });
+		//   }
+		// $("#my_audio").get(0).play();
 	})
 })
 
@@ -62,14 +97,31 @@ function letter_check(let) {
 	if (matches.length > 0) {
 		var i;
 		for (i=0; i<matches.length; i++) {
-			matches[i].innerHTML = "<h1>" + let + "</h>";
+			matches[i].innerHTML = "<h1>" + let + "</h1>";
+			letters_left = letters_left - 1;
 		}
+		console.log("letters_left = " + letters_left);
 		var btn = document.getElementById(let);
 		btn.setAttribute("class", "btn btn-success disabled");
+		document.getElementById(let).disabled = true;
 	}
 	else {
 		var btn = document.getElementById(let);
 		btn.setAttribute("class", "btn btn-danger disabled");
+		window.wrong_lets = window.wrong_lets + 1;
 	}
-
+	$(document).ready(() => {
+		if (letters_left == 0) {
+			document.getElementById("my_audio").pause();
+			var d2 = new Date();
+			var end_time = d2.getTime();
+			console.log("end time = " + end_time);
+			var total_time = end_time - start_time;
+			console.log("total time = " + total_time);
+			console.log("wrong_lets = " + wrong_lets);
+			var score = 50 - (total_time/1000) - wrong_lets;
+			alert("Alarm Deactivated: You earned " + Math.round(score) + " points.");
+			location.href = "Setting_page.html";
+		}
+	})
 }
