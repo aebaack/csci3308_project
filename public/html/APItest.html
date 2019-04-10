@@ -92,11 +92,11 @@
 
 			$.getJSON('https://www.reddit.com/r/all/top.json',function(data_red1){
 				var data_red = data_red1.data.children;
-				//console.log(data_red[0].data)
+				console.log(data_red[1].data)
 				document.getElementById("redditAPI").innerHTML = '<h1 class="text-center card-header">Top 2 Reddit Posts</h1> &nbsp';
 				for (var i = 0; i < 2; i++){
 					console.log()
-					document.getElementById('redditAPI').innerHTML += "<div class = 'jumbotron' > <h4>" + data_red[i].data.title + "</h4> <a target='_blank' href ='https://www.reddit.com/" + data_red[i].data.permalink + "'>See Post</a></br> </div>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
+					document.getElementById('redditAPI').innerHTML += "<div class = 'jumbotron' > <img src='" + data_red[i].data.thumbnail + "' alt=' '><h4>" + data_red[i].data.title + "</h4> <a target='_blank' href ='https://www.reddit.com/" + data_red[i].data.permalink + "'>See Post</a></br> </div>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
 				}
 				document.getElementById('redditAPI').innerHTML += '</ol>'
 			})
@@ -117,7 +117,7 @@
 
 			var user_gif_pref = "cat";
 			$.getJSON('https://api.tenor.com/v1/random?q=' + user_gif_pref + '&key=DUOD1ML0KJP3&limit=1&ar_range=standard',function(data_gif){
-				console.log(data_gif);
+				//console.log(data_gif);
 				document.getElementById("TenorAPI").innerHTML = '<h1 class="text-center card-header">Random GIF</h1> &nbsp';
 				document.getElementById('TenorAPI').innerHTML += "<div class='jumbotron'><img src='" + data_gif.results[0].media[0].mediumgif.url + "' alt='" + data_gif.results[0].itemurl + "'></div>";
 			})
