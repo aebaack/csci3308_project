@@ -63,11 +63,17 @@ router.get('/logout', isLoggedIn, (req, res, next) => {
 // Returns the current user's information
 router.get('/', isLoggedIn, (req, res, next) => {
   knex('users')
-    .select(['id', 'name', 'email', 'created_at', 'updated_at'])
+    .select(['id', 'name', 'email', 'snooze', 'created_at', 'updated_at'])
     .where('users.id', req.user.id)
     .first()
     .then(user => {
-      res.send(user);
+      knex('user_api')
+        .where('user_api.user_id', user.id)
+        .join('api_ids', 'user_api.api_id', '=', 'api_ids.id')
+        .then(api => {
+          user.api = api.map(a => a.api_name);
+          res.send(user);
+        })
     })
     .catch(err => next(err));
 });
