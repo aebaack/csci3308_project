@@ -17,13 +17,20 @@ passport.use(new LocalStrategy(options, (email, password, done) => {
     .where('users.email', email)
     .first()
     .then(user => {
-      if (!user) {
-        return done(null, false, {message: 'User not found'});
-      }
-      
-      bcrypt.compare(password, user.hashed_password)
-        .then(isSame => isSame ? done(null, user) : done(null, false, {message: 'Wrong password'}))
-      })
+      knex('user_api')
+        .where('user_api.user_id', user.id)
+        .join('api_ids', 'user_api.api_id', '=', 'api_ids.id')
+        .then(api => {
+          if (!user) {
+            return done(null, false, {message: 'User not found'});
+          }
+
+          user.api = api.map(a => a.api_name);
+          
+          bcrypt.compare(password, user.hashed_password)
+            .then(isSame => isSame ? done(null, user) : done(null, false, {message: 'Wrong password'}))
+          })
+        })
     .catch(err => done(err));
 }));
 
