@@ -13,6 +13,7 @@ exports.up = (knex, Promise) => {
     table.text('name').notNullable();
     table.text('email').notNullable().unique();
     table.specificType('hashed_password', 'char(60)').notNullable();
+    table.integer('snooze');
     table.timestamps(true, true);
   });
 };
