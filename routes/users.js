@@ -78,6 +78,87 @@ router.get('/', isLoggedIn, (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.post('/update', isLoggedIn, (req, res, next) => {
+  const promises = []
+
+  if (req.body.api.length > 0) {
+    promises.push(
+      knex('user_api')
+        .del()
+        .where('user_api.user_id', req.user.id)
+        .then(delApi => {
+          const p = req.body.api.map(a => {
+            return knex('user_api')
+              .insert({
+                user_id: req.user.id,
+                api_id: parseInt(a),
+              })
+          })
+          return Promise.all(p);
+        })
+        .then(_ => true)
+        .catch(err => next(err))
+    );
+  }
+
+
+  if (req.body.passwordThird) {
+    promises.push(
+      knex('users')
+        .where('users.id', req.user.id)
+        .first()
+        .then(user => {
+          if (!user) {
+            return res.status(404).send('No user found');
+          }
+
+          bcrypt.compare(req.body.passwordFirst, user.hashed_password)
+            .then(isSame => {
+              if (isSame) {
+                bcrypt.hash(req.body.passwordThird, 10)
+                  .then(newpass => {
+                    knex('users')
+                      .where('users.id', req.user.id)
+                      .update({
+                        snooze: parseInt(req.body.snooze),
+                        hashed_password: newpass,
+                      }, '*')
+                      .then(u => {
+                        knex('user_api')
+                          .where('user_api.user_id', u[0].id)
+                          .join('api_ids', 'user_api.api_id', '=', 'api_ids.id')
+                          .then(api => {
+                            u[0].api = api.map(a => a.api_name);
+                            delete u[0].hashed_password;
+                            return true;
+                          })
+                      })
+                  })
+              } else {
+                return res.status(500).send('Wrong password');
+              }
+            })
+        })
+    )
+  }
+
+  if (req.body.snooze) {
+    promises.push(
+      knex('users')
+        .where('users.id', req.user.id)
+        .update({snooze: parseInt(req.body.snooze)}, '*')
+        .then(u => {
+          return true;
+        })
+    );
+  }
+
+  Promise.all(promises)
+    .then(v => {
+      res.redirect('/users');
+    });
+});
+
 // Deletes currently signed in user
 // Returns the user information
 router.delete('/', isLoggedIn, (req, res, next) => {
