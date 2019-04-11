@@ -108,9 +108,12 @@
 				var long = data_zip.results[0].location.lng;
 				$.getJSON('https://api.weather.gov/points/' + lat + ',' + long + '/forecast', function(data_weath){
 					//console.log(data_weath);
-					document.getElementById("WeatherAPI").innerHTML = '<h1 class="text-center card-header">Weather Forecast</h1> &nbsp';
-					document.getElementById('WeatherAPI').innerHTML += "<div class = 'jumbotron' > <h2>" + data_weath.properties.periods[0].name + "</h2><h4>" + data_weath.properties.periods[0].shortForecast + "</h4><h4>" + data_weath.properties.periods[0].temperature + " F</h4><h4>" + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </h4></br> </div>";
-					document.getElementById('WeatherAPI').innerHTML += "<div class = 'jumbotron' > <h2>" + data_weath.properties.periods[2].name + "</h2><h4>" + data_weath.properties.periods[2].shortForecast + "</h4><h4>" + data_weath.properties.periods[2].temperature + " F</h4><h4>" + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </h4></br> </div>";
+					var in_HTML = '<h1 class="text-center card-header">Weather Forecast</h1>';
+					in_HTML += "<div class='container'><div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[0].name + "</h3><p>" + data_weath.properties.periods[0].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[0].temperature + " F</p><p>Wind: " + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </p></div>";
+					in_HTML += "<div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[1].name + "</h3><p>" + data_weath.properties.periods[1].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[1].temperature + " F</p><p>Wind: " + data_weath.properties.periods[1].windSpeed + " " + data_weath.properties.periods[1].windDirection + " </p></div></div><br>";
+					in_HTML += "<div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[2].name + "</h3><p>" + data_weath.properties.periods[2].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[2].temperature + " F</p><p>Wind: " + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </p></div>";
+					in_HTML += "<div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[3].name + "</h3><p>" + data_weath.properties.periods[3].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[3].temperature + " F</p><p>Wind: " + data_weath.properties.periods[3].windSpeed + " " + data_weath.properties.periods[3].windDirection + " </p></div></div></div>";
+					document.getElementById("WeatherAPI").innerHTML = in_HTML;
 				})
 
 			})
