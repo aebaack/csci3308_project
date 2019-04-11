@@ -1,0 +1,132 @@
+<!-- Home Page -->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<title>API Test</title>
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="row">
+			<div id = "googelAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+
+			<div id = "quoteAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div id = "NASAAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+
+			<div id = "redditAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+		</div>
+
+		<div class="row">
+			<div id = "WeatherAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+
+			<div id = "TenorAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			</div>
+		</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function() {
+			var url_gn  = 'https://newsapi.org/v2/top-headlines?' +
+			'country=us&' +
+			'apiKey=85582d6364bb492ca683e9cf18d34dd3';
+
+			$.ajax({url:url_gn , dataType:"json"}).then(function(data_gn) {
+				//console.log(data_gn); //Review all of the data returned
+
+				document.getElementById("googelAPI").innerHTML = '<h1 class="text-center card-header">Google News</h1> &nbsp';
+
+				document.getElementById("googelAPI").innerHTML += '<img class="card-img-top" src="' + data_gn.articles[0].urlToImage + '" alt="gImg"> &nbsp';
+
+				document.getElementById("googelAPI").innerHTML += '<h5 class="card-title text-center">' + data_gn.articles[0].title + '</h5>';
+				document.getElementById("googelAPI").innerHTML += '<p> Learn More: </p>';
+
+				document.getElementById("googelAPI").innerHTML += '<a target=:"_blank" href = "' + data_gn.articles[0].url + '"> Visit Website </a>';
+			})
+
+			var url_quote  = 'https://quotes.rest/qod'
+			$.ajax({url:url_quote , dataType:"json"}).then(function(data_quote) {
+				//console.log(data_quote);
+				document.getElementById("quoteAPI").innerHTML = '<h1 class="text-center card-header">Quote of The Day</h1> &nbsp';
+				document.getElementById("quoteAPI").innerHTML += '<div class = "jumbotron"> <h5 class="card-title text-center">' + data_quote.contents.quotes[0].quote + '</h5><h5 class="text-right"> ~' + data_quote.contents.quotes[0].author + ' </h5> </div>'; 
+			})
+
+			/*
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0');
+			var url_event  = "http://api.hiztory.org/aviation/09/26/1/15/api.xml"
+			$.ajax({url:url_event , dataType:"json"}).then(function(data_event) {
+				console.log(data_event);
+
+			})
+			*/
+
+			var url_NASA  = "https://api.nasa.gov/planetary/apod?api_key=aOGxRi5jcDnftQ8diN3uxun03nqaiP0leeYbJUvu"
+			$.ajax({url:url_NASA , dataType:"json"}).then(function(data_NASA) {
+				//console.log(data_NASA);
+				document.getElementById("NASAAPI").innerHTML = '<h1 class="text-center card-header">NASA Pic of The Day</h1> &nbsp';
+				document.getElementById("NASAAPI").innerHTML += '<h5 class="card-title text-center">' + data_NASA.title + '</h5>';
+				document.getElementById("NASAAPI").innerHTML += '<img class="card-img" src="' + data_NASA.hdurl + '" alt="gImg"> &nbsp';
+				document.getElementById("NASAAPI").innerHTML += '<p>' + data_NASA.explanation + '</p>';
+
+			})
+
+			$.getJSON('https://www.reddit.com/r/all/top.json',function(data_red1){
+				var data_red = data_red1.data.children;
+				console.log(data_red[1].data)
+				document.getElementById("redditAPI").innerHTML = '<h1 class="text-center card-header">Top 2 Reddit Posts</h1> &nbsp';
+				for (var i = 0; i < 2; i++){
+					console.log()
+					document.getElementById('redditAPI').innerHTML += "<div class = 'jumbotron' > <img src='" + data_red[i].data.thumbnail + "' alt=' '><h4>" + data_red[i].data.title + "</h4> <a target='_blank' href ='https://www.reddit.com/" + data_red[i].data.permalink + "'>See Post</a></br> </div>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
+				}
+				document.getElementById('redditAPI').innerHTML += '</ol>'
+			})
+			
+			var user_zip = '80304';
+			$.getJSON('https://api.geocod.io/v1.3/geocode?postal_code=' + user_zip + '&api_key=cc5dd5a9903e0669aaaad3de56c05cc6a3d8e3d',function(data_zip){
+				//console.log(data_zip);
+				var lat = data_zip.results[0].location.lat;
+				var long = data_zip.results[0].location.lng;
+				$.getJSON('https://api.weather.gov/points/' + lat + ',' + long + '/forecast', function(data_weath){
+					//console.log(data_weath);
+					document.getElementById("WeatherAPI").innerHTML = '<h1 class="text-center card-header">Weather Forecast</h1> &nbsp';
+					document.getElementById('WeatherAPI').innerHTML += "<div class = 'jumbotron' > <h2>" + data_weath.properties.periods[0].name + "</h2><h4>" + data_weath.properties.periods[0].shortForecast + "</h4><h4>" + data_weath.properties.periods[0].temperature + " F</h4><h4>" + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </h4></br> </div>";
+					document.getElementById('WeatherAPI').innerHTML += "<div class = 'jumbotron' > <h2>" + data_weath.properties.periods[2].name + "</h2><h4>" + data_weath.properties.periods[2].shortForecast + "</h4><h4>" + data_weath.properties.periods[2].temperature + " F</h4><h4>" + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </h4></br> </div>";
+				})
+
+			})
+
+			var user_gif_pref = "cat";
+			$.getJSON('https://api.tenor.com/v1/random?q=' + user_gif_pref + '&key=DUOD1ML0KJP3&limit=1&ar_range=standard',function(data_gif){
+				//console.log(data_gif);
+				document.getElementById("TenorAPI").innerHTML = '<h1 class="text-center card-header">Random GIF</h1> &nbsp';
+				document.getElementById('TenorAPI').innerHTML += "<div class='jumbotron'><img src='" + data_gif.results[0].media[0].mediumgif.url + "' alt='" + data_gif.results[0].itemurl + "'></div>";
+			})
+		})
+
+	</script>
+
+
+  </body>
+
+
+</html>
