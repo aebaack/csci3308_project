@@ -15,6 +15,8 @@ exports.seed = (knex, Promise) => {
           email: 'aidan@3308.com',
           hashed_password: hpass,
           snooze: 5,
+          score: 5,
+          zip_code: '80309',
         },
         {
           id: 2,
@@ -22,6 +24,8 @@ exports.seed = (knex, Promise) => {
           email: 'jake@3308.com',
           hashed_password: hpass,
           snooze: 10,
+          score: 10,
+          zip_code: '80309',
         },
         {
           id: 3,
@@ -29,6 +33,8 @@ exports.seed = (knex, Promise) => {
           email: 'nick@3308.com',
           hashed_password: hpass,
           snooze: 15,
+          score: 15,
+          zip_code: '80309',
         },
         {
           id: 4,
@@ -36,6 +42,8 @@ exports.seed = (knex, Promise) => {
           email: 'adam@3308.com',
           hashed_password: hpass,
           snooze: 20,
+          score: 20,
+          zip_code: '80309',
         },
         {
           id: 5,
@@ -43,6 +51,8 @@ exports.seed = (knex, Promise) => {
           email: 'yicheng@3308.com',
           hashed_password: hpass,
           snooze: 25,
+          score: 25,
+          zip_code: '80309',
         },
       ]);
     })
