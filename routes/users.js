@@ -115,6 +115,19 @@ router.get('/', isLoggedIn, (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.post('/score', isLoggedIn, (req, res, next) => {
+  const { score } = req.body;
+
+  knex('users')
+    .where('users.id', req.user.id)
+    .update({
+      score,
+    }, '*')
+    .then(u => {
+      res.status(200).send(`Score updated to ${score}`);
+    })
+})
+
 router.post('/update', isLoggedIn, (req, res, next) => {
   const promises = []
 
