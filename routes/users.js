@@ -63,7 +63,7 @@ router.get('/logout', isLoggedIn, (req, res, next) => {
 // Returns the current user's information
 router.get('/', isLoggedIn, (req, res, next) => {
   knex('users')
-    .select(['id', 'name', 'email', 'snooze', 'created_at', 'updated_at'])
+    .select(['id', 'name', 'email', 'snooze', 'created_at', 'updated_at', 'score', 'zip_code'])
     .where('users.id', req.user.id)
     .first()
     .then(user => {
@@ -163,7 +163,7 @@ router.post('/update', isLoggedIn, (req, res, next) => {
 // Returns the user information
 router.delete('/', isLoggedIn, (req, res, next) => {
   knex('users')
-    .del(['id', 'name', 'email', 'created_at', 'updated_at'])
+    .del(['id', 'name', 'email', 'created_at', 'updated_at', 'snooze', 'score', 'zip_code'])
     .where('users.email', req.user.email)
     .then(user => {
       req.logOut();
