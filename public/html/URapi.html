@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>UpRight Home</title>
+    <title>UpRight Daily Updates</title>
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="../css/my_style.css" rel="stylesheet">
   </head>
+
   <body>
   	<!-- Nav bar with sign in option -->
   	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,32 +31,40 @@
 	<div class="container">
 		<div class = "jumbotron jumbotron-fluid" >
 			<h1 class="text-center display-4" >Good Morning!</h1>
-			<p class = "text-center"> Congrats on solving the puzzle, and welcome to your personalized home screen! Click on a window below for a full screen view. </p> 
+			<p class = "text-center"> Congrats on solving the puzzle, and welcome to your personalized info screen! Click on a window below for a full screen view. </p> 
 		</div>
 
-		<div class="row">
-			<div class="card col-sm-6 mx-auto" onclick="openNav1()">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 1 Here</p>
+		<div class="masonry-with-columns">
+			<div id = "API0" class="card" onclick="openNav0()">	
 			</div>
 
-			<div class="card col-sm-6 mx-auto" onclick="openNav2()">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 2 Here</p>
+			<div id = "API1" class="card" onclick="openNav1()">	
 			</div>
+
+			<div id = "API2" class="card" onclick="openNav2()">
+			</div>
+
+			<div id = "API3" class="card" onclick="openNav3()">	
+			</div>
+
+			<div id = "API4" class="card" onclick="openNav4()">	
+			</div>
+
+			<div id = "API5" class="card" onclick="openNav5()">	
+			</div>
+
 		</div>
 
-		<div class="row">
-			<div class="card col-sm-6 mx-auto" onclick="openNav3()">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 3 Here</p>
-			</div>
+	</div>
 
-			<div class="card col-sm-6 mx-auto" onclick="openNav4()">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 4 Here</p>
-			</div>
+	<div id="myNav0" class="overlay">
+	  <!-- Button to close the overlay navigation -->
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav0()">&times;</a>
+	  <!-- Overlay content -->
+	  <div class="overlay-content">
+	  	<div id = "API0z" class="card">	
 		</div>
+	  </div>
 	</div>
 
 	<div id="myNav1" class="overlay">
@@ -63,9 +72,7 @@
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
 	  <!-- Overlay content -->
 	  <div class="overlay-content">
-	  	<div class="card col-sm-6 mx-auto">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 1 Here</p>
+	  	<div id = "API1z" class="card">	
 		</div>
 	  </div>
 	</div>
@@ -75,10 +82,9 @@
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
 	  <!-- Overlay content -->
 	  <div class="overlay-content">
-	  	<div class="card col-sm-6 mx-auto">
-			<h1 class="text-center card-header">Place Holder</h1>
-		  	<p class="lead text-center" >API 2 Here</p>
+	  	<div id = "API2z" class="card">	
 		</div>
+	  </div>
 	  </div>
 	</div>
 
@@ -87,9 +93,7 @@
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
 	  <!-- Overlay content -->
 	  <div class="overlay-content">
-	  	<div class="card col-sm-6 mx-auto">
-				<h1 class="text-center card-header">Place Holder</h1>
-			  	<p class="lead text-center" >API 3 Here</p>
+	  	<div id = "API3z" class="card">	
 		</div>
 	  </div>
 	</div>
@@ -99,19 +103,25 @@
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
 	  <!-- Overlay content -->
 	  <div class="overlay-content">
-	  	<div class="card col-sm-6 mx-auto">
-			<h1 class="text-center card-header">Place Holder</h1>
-		  	<p class="lead text-center" >API 4 Here</p>
+	  	<div id = "API4z" class="card">	
 		</div>
 	  </div>
 	</div>
 
-
-		
+	<div id="myNav5" class="overlay">
+	  <!-- Button to close the overlay navigation -->
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+	  <!-- Overlay content -->
+	  <div class="overlay-content">
+	  	<div id = "API5z" class="card">	
+		</div>
+	  </div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<script src="../js/URscripts.js"></script>
+	<script src="../js/URscriptsAPI.js"></script>
+
 </body>
 </html>

@@ -12,7 +12,7 @@
 
 	<body>
 		<div class="row">
-			<div id = "googelAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
+			<div id = "googleAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
 			</div>
 
 			<div id = "quoteAPI" class="card col-sm-6 mx-auto" onclick="openNav1()">	
@@ -52,14 +52,14 @@
 			$.ajax({url:url_gn , dataType:"json"}).then(function(data_gn) {
 				//console.log(data_gn); //Review all of the data returned
 
-				document.getElementById("googelAPI").innerHTML = '<h1 class="text-center card-header">Google News</h1> &nbsp';
+				document.getElementById("googleAPI").innerHTML = '<h1 class="text-center card-header">Google News</h1> &nbsp';
 
-				document.getElementById("googelAPI").innerHTML += '<img class="card-img-top" src="' + data_gn.articles[0].urlToImage + '" alt="gImg"> &nbsp';
+				document.getElementById("googleAPI").innerHTML += '<img class="card-img-top" src="' + data_gn.articles[0].urlToImage + '" alt="gImg"> &nbsp';
 
-				document.getElementById("googelAPI").innerHTML += '<h5 class="card-title text-center">' + data_gn.articles[0].title + '</h5>';
-				document.getElementById("googelAPI").innerHTML += '<p> Learn More: </p>';
+				document.getElementById("googleAPI").innerHTML += '<h5 class="card-title text-center">' + data_gn.articles[0].title + '</h5>';
+				document.getElementById("googleAPI").innerHTML += '<p> Learn More: </p>';
 
-				document.getElementById("googelAPI").innerHTML += '<a target=:"_blank" href = "' + data_gn.articles[0].url + '"> Visit Website </a>';
+				document.getElementById("googleAPI").innerHTML += '<a target=:"_blank" href = "' + data_gn.articles[0].url + '"> Visit Website </a>';
 			})
 
 			var url_quote  = 'https://quotes.rest/qod'

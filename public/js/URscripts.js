@@ -19,37 +19,5 @@ function noIntrests(id1,id2,id3,id4)
 	}
 }
 
-function openNav1() {
-  document.getElementById("myNav1").style.display = "block";
-}
-
-function openNav2() {
-  document.getElementById("myNav2").style.display = "block";
-}
-
-function openNav3() {
-  document.getElementById("myNav3").style.display = "block";
-}
-
-function openNav4() {
-  document.getElementById("myNav4").style.display = "block";
-}
-
-function closeNav1() {
-  document.getElementById("myNav1").style.display = "none";
-}
-
-function closeNav2() {
-  document.getElementById("myNav2").style.display = "none";
-}
-
-function closeNav3() {
-  document.getElementById("myNav3").style.display = "none";
-}
-
-function closeNav4() {
-  document.getElementById("myNav4").style.display = "none";
-}
-
 
 				
