@@ -8,26 +8,63 @@ const passport = require('../auth/local');
 
 // Create a new user
 router.post('/', (req, res, next) => {
-  const { fullName, emailAddress, passwordFirst } = req.body;
-  
+  const { 
+    fullName, 
+    emailAddress, 
+    passwordFirst, 
+    zipCode, 
+    snooze,
+    api
+  } = req.body;
+
   bcrypt.hash(passwordFirst, 10)
     .then(hpass => {
       return knex('users')
         .insert({
           'name': fullName,
           'email': emailAddress,
+          'zip_code': zipCode,
           'hashed_password': hpass,
+          snooze,
         })
-        .returning(['id', 'name', 'email', 'created_at', 'updated_at'])
+        .returning(['id', 'name', 'email', 'created_at', 'updated_at', 'snooze', 'zip_code'])
     })
     .then(user => {
-      passport.authenticate('local', (err, user, info) => {
-        if (user) {
-          req.logIn(user, (err) => {
-            return res.redirect('/html/hangman.html');
-          })
+      let apiF; // Default form submission is garbage
+      if (api) {
+        if (typeof api == 'object') {
+          apiF = api;
+        } else {
+          apiF = [api];
         }
-      })(req, res, next);
+      } else {
+        apiF = [];
+      }
+
+      Promise.all(apiF.map(a => 
+        knex('user_api')
+          .insert({
+            'user_id': user[0].id,
+            'api_id': a,
+          }, '*')
+      )).then(apis => {
+        Promise.all((apis || []).map(l => {
+          return knex('api_ids')
+            .select('api_name')
+            .where('api_ids.id', l[0].api_id)
+        }))
+        .then(names => {
+          user.api = names.map(n => n[0].api_name);
+          
+          passport.authenticate('local', (err, user, info) => {
+            if (user) {
+              req.logIn(user, (err) => {
+                return res.redirect('/html/hangman.html');
+              })
+            }
+          })(req, res, next);
+        });
+      })
     })
 });
 
