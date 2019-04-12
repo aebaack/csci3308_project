@@ -26,6 +26,9 @@ app.use(express.static(path.join('public')));
 
 const hangman = require('./routes/hangman');
 const users = require('./routes/users');
+const scoreboard = require('./routes/score');
+
+app.use('/scoreboard', scoreboard);
 app.use('/hangman', hangman);
 app.use('/users', users);
 
