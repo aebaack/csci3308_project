@@ -7,11 +7,27 @@ exports.seed = (knex, Promise) => {
       return knex('api_ids').insert([
         {
           id: 1,
-          api_name: 'Weather',
+          api_name: 'Google',
         },
         {
           id: 2,
-          api_name: 'Gifs',
+          api_name: 'Quote',
+        },
+        {
+          id: 3,
+          api_name: 'NASA',
+        },
+        {
+          id: 4,
+          api_name: 'Reddit',
+        },
+        {
+          id: 5,
+          api_name: 'Weather',
+        },
+        {
+          id: 6,
+          api_name: 'Gif',
         },
       ]);
     })

@@ -12,8 +12,10 @@ exports.up = (knex, Promise) => {
     table.increments();
     table.text('name').notNullable();
     table.text('email').notNullable().unique();
+    table.text('zip_code');
     table.specificType('hashed_password', 'char(60)').notNullable();
     table.integer('snooze');
+    table.integer('score');
     table.timestamps(true, true);
   });
 };
