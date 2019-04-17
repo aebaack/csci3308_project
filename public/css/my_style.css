@@ -2,21 +2,91 @@
 
 body {
   background-image: url("clouds.jpg"); 
+  background-size:350%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.jumbotron {
-
+.card {
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .card-img {
   max-height: 25rem;
   height: auto;
   width: auto;
-  margin:auto;
+  margin: auto;
+  border-radius: 30px;
+  padding: 15px;
 }
 
 .card-header {
+  /*background-image: url("clouds2.jpg") */
+}
 
+.card.back {
+  background-image: url("texture1.jpg");
+  background-size:200%;
+  color:Black;
+}
+
+.card.cform {
+  background-image: url("tiles.jpg"); 
+  background-size:200%;
+  background-repeat:round;
+  color: white;
+  border-radius: 15px;
+}
+
+.card.c2form {
+  background-image: url("tiles.jpg"); 
+  background-size:100%;
+  background-repeat:no-repeat;
+  color: white;
+  border-radius: 15px;
+}
+
+.jumbotron{
+  background-size:100%;
+  border-radius: 15px;
+  background: none;
+}
+
+.jumbotron.jhead {
+  background-image: url("tiles.jpg"); 
+  background-size:100%;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 15px;
+}
+
+.jumbotron.reddit {
+  padding: 1px
+}
+
+/* Gif somtimes overlaps need to fix*/
+.img {
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 15px;
+  max-height: 25rem;
+  max-width: 25rem;
+}
+
+.navbar {
+  margin: 0px;
+  background:none; 
+ /* background-image: linear-gradient(to right,Yellow,Orange,Plum,SkyBlue,White); */
+ /* background-image: linear-gradient(to right,White,SkyBlue,Yellow,SkyBlue,White); */
+  color: DodgerBlue;
+  font-size:20px;
+}
+
+.navbar-brand {
+  font-size:25px;
+  color:white;
+  font-weight: 1000;
 }
 
  /* The Overlay (background) */
@@ -53,7 +123,7 @@ body {
   color: #f1f1f1;
 }
 
-.overlay .closebtn {
+.overlay.closebtn {
   position: absolute;
   top: 10px;
   right: 45px;

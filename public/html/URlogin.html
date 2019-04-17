@@ -12,14 +12,12 @@
   </head>
   <body>
   	<!-- Nav bar with sign in option -->
-  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<nav class="navbar navbar-expand-lg">
   		<span class="navbar-brand d-flex flex-fill">UpRight</span>
   		<div class="form-inline navbar-right">
-  			<span class="navbar-text d-flex flex-fill">Don't Have an Account?</span>
-  			&nbsp;
-  			&nbsp;
+  			<span class="navbar-text d-flex flex-fill">Don't Have an Account? &nbsp </span>
 			<form action="../index.html">
-				<button class="btn btn-outline-light" type="submit" value="submit">Sign Up!</button>
+				<button class="btn btn-outline-primary" type="submit" value="submit">Sign Up!</button>
 			</form>
   		</div>
 	</nav>
@@ -30,17 +28,17 @@
 	<div class="container">
 		<form>
 			<!-- Login Card -->
-			<div class="card col-sm-7 mx-auto">
+			<div class="card col-sm-7 mx-auto cform">
 			  	<h1 class="text-center card-header">UpRight Login</h1>
 			  	<p class="lead text-center" >Welcome Back!</p>
 			  	<div class="form-group">
-					<label class="form-label"  for="emailAddress">Email address</label>
+					<label class="form-label"  for="emailAddress"><strong>Email address</strong></label>
 					<div class="">
 						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email" required>
 					</div>
 			   	</div>
 				<div class="form-group">
-					<label  class="form-label" for="password">Password</label>
+					<label  class="form-label" for="password"><strong>Password</strong></label>
 					<div class="">
 						<input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
 					</div>
@@ -48,13 +46,13 @@
 				&nbsp;
 				<div class="form-group">
 				<!-- Submit info -->
-					<input type="submit" value="Sign In" class="btn btn-outline-primary btn-block">
+					<input type="submit" value="Sign In" class="btn btn-primary btn-block">
 
 				</div>
 				&nbsp;
 				<div class="row">
-					<h6 class="card-subtitle mb-2 text-muted col-sm-3">Need to sign up?</h6>
-					<a href="../index.html" class="card-subtitle card-link">Register Here</a>
+					<h6 class="card-subtitle mb-2 col-sm-3" style="color:White">Need to sign up?</h6>
+					<a href="../index.html" class="card-subtitle card-link" style="color:White"><strong>Register Here</strong></a>
 				</div>
 			</div>
 		</form>

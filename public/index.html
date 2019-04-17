@@ -12,14 +12,12 @@
   </head>
   <body>
   	<!-- Nav bar with sign in option -->
-  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<nav class="navbar">
   		<span class="navbar-brand d-flex flex-fill">UpRight</span>
   		<div class="form-inline navbar-right">
-  			<span class="navbar-text d-flex flex-fill">Already Have an Account?</span>
-  			&nbsp;
-  			&nbsp;
+  			<span class="navbar-text d-flex flex-fill">Already Have an Account? &nbsp </span>
   			<form action="./html/URlogin.html">
-				<button class="btn btn-outline-light" type="submit" value="submit">Sign In!</button>
+				<button class="btn btn-outline-primary" type="submit" value="submit">Sign In!</button>
 			</form>
   		</div>
 	</nav>
@@ -29,113 +27,114 @@
 	<!-- Main body of regestration form -->
 	<div class="container">
 		<!-- Header Card -->
-		<div class="card">
+		<div class="card c2form">
 		  <h1 class="text-center card-header">UpRight Registration</h1>
-		  <p class="lead text-center" >Welcome to UpRight!</p>
+		  <h6 class="lead text-center">Welcome to UpRight!</h6>
 		</div>
 		<br>
-		<br>
 		<!-- User info -->
-		<form action="/users" method="post">
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label" for="fullName">Full Name</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name" required>
-				</div>
-			</div>
-			<div class="form-group row">
-				<label  class="col-sm-2 col-form-label" for="zipCode">Zip Code</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Enter Zip Code" required>
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label"  for="emailAddress">Email Address</label>
-				<div class="col-sm-10">
-					<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter Email" required>
-				</div>
-			</div>
-			<div class="form-group row">
-				<label  class="col-sm-2 col-form-label" for="passwordFirst">Password</label>
-				<div class="col-sm-10">
-					<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password" required>
-				</div>
-			</div>
-			<div class="form-group row">
-				<label  class="col-sm-2 col-form-label" for="passwordConfirm">Confirm Password</label>
-				<div class="col-sm-10">
-					<input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
-				</div>
-			</div>
-			<!-- User prefrences -->
-			<div class="form-group row">
-				<label  class="col-sm-2 col-form-label" for="snoozeSelect">Snoooze Length</label>
-				<div class="col-sm-2">
-					<div class="form-check">
-					  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="5" required>
-					  <label class="form-check-label" for="snooze">
-						5 min
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="10" required>
-					  <label class="form-check-label" for="snooze">
-						10 min
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="15" required>
-					  <label class="form-check-label" for="snooze">
-						15 min
-					  </label>
+		<div class = "card back">
+			<form action="/users" method="post">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="fullName">Full Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name" required>
 					</div>
 				</div>
-				<small id="snoozeHelp" class="form-text text-muted row col-sm-2">
-				  You can change your snooze length at anytime in the settings menu
-				</small>
-			</div>
-			<div class="form-group row">
-				<label  class="col-sm-2 col-form-label" for="intrestSelect">Interests</label>
-				<div class="col-sm-2">
-					<div class="form-check">
-					  <input class="form-check-input" type="checkbox" name="api" value="1" id="api">
-					  <label class="form-check-label" for="api">
-					    API Option 1
-					  </label>
+				<div class="form-group row">
+					<label  class="col-sm-2 col-form-label" for="zipCode">Zip Code</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Enter Zip Code" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label"  for="emailAddress">Email Address</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter Email" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label  class="col-sm-2 col-form-label" for="passwordFirst">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label  class="col-sm-2 col-form-label" for="passwordConfirm">Confirm Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
+					</div>
+				</div>
+				<!-- User prefrences -->
+				<div class="form-group row">
+					<label  class="col-sm-2 col-form-label" for="snoozeSelect">Snoooze Length</label>
+					<div class="col-sm-2">
+						<div class="form-check">
+						  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="5" required>
+						  <label class="form-check-label" for="snooze">
+							5 min
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="10" required>
+						  <label class="form-check-label" for="snooze">
+							10 min
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="15" required>
+						  <label class="form-check-label" for="snooze">
+							15 min
+						  </label>
+						</div>
+					</div>
+					<small id="snoozeHelp" class="form-text text-muted row col-sm-2">
+					  You can change your snooze length at anytime in the settings menu
+					</small>
+				</div>
+				<div class="form-group row">
+					<label  class="col-sm-2 col-form-label" for="intrestSelect">Interests</label>
+					<div class="col-sm-2">
+						<div class="form-check">
+						  <input class="form-check-input" type="checkbox" name="api" value="1" id="api">
+						  <label class="form-check-label" for="api">
+						    API Option 1
+						  </label>
+					  	</div>
+					  	<div class="form-check">
+						  <input class="form-check-input" type="checkbox" name="api" value="2" id="api">
+						  <label class="form-check-label" for="api">
+						    API Option 2
+						  </label>
+					  	</div>
+					  	<div class="form-check">
+						  <input class="form-check-input" type="checkbox" name="api" value="3" id="api">
+						  <label class="form-check-label" for="api">
+						    API Option 3
+						  </label>
+					  	</div>
+					  	<div class="form-check">
+						  <input class="form-check-input" type="checkbox" name="api" value="4" id="api">
+						  <label class="form-check-label" for="api">
+						    API Option 4
+						  </label>
+					  	</div>
+					  	<!-- <div class="form-check">
+						  <input class="form-check-input" onclick="noIntrests('intrest1','intrest2','intrest3','intrest4')" type="checkbox" value="" id="intrestN">
+						  <label class="form-check-label" for="intrestN">
+						    None
+						  </label>
+					  	</div> -->
 				  	</div>
-				  	<div class="form-check">
-					  <input class="form-check-input" type="checkbox" name="api" value="2" id="api">
-					  <label class="form-check-label" for="api">
-					    API Option 2
-					  </label>
-				  	</div>
-				  	<div class="form-check">
-					  <input class="form-check-input" type="checkbox" name="api" value="3" id="api">
-					  <label class="form-check-label" for="api">
-					    API Option 3
-					  </label>
-				  	</div>
-				  	<div class="form-check">
-					  <input class="form-check-input" type="checkbox" name="api" value="4" id="api">
-					  <label class="form-check-label" for="api">
-					    API Option 4
-					  </label>
-				  	</div>
-				  	<!-- <div class="form-check">
-					  <input class="form-check-input" onclick="noIntrests('intrest1','intrest2','intrest3','intrest4')" type="checkbox" value="" id="intrestN">
-					  <label class="form-check-label" for="intrestN">
-					    None
-					  </label>
-				  	</div> -->
-			  	</div>
-			  	<small id="snoozeHelp" class="form-text text-muted row col-sm-2">
-					Your selection here will help us populate your custom home page
-				</small>
-			</div>
+				  	<small id="snoozeHelp" class="form-text text-muted row col-sm-2">
+						Your selection here will help us populate your custom home page
+					</small>
+				</div>
 
-			<!-- Submit info -->
-			<input type="submit" value="Create Account" class="btn btn-outline-primary btn-block">
-		</form>
+				<!-- Submit info -->
+				<input type="submit" value="Create Account" class="btn btn-primary btn-block">
+			</form>
+		</div>
 		<br>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

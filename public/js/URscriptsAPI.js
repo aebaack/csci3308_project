@@ -54,10 +54,10 @@ $(document).ready(function() {
 			$.getJSON('https://www.reddit.com/r/all/top.json',function(data_red1){
 				var data_red = data_red1.data.children;
 				console.log(data_red[1].data)
-				document.getElementById(API_id3).innerHTML = '<h1 class="text-center card-header">Top 2 Reddit Posts</h1> &nbsp';
-				for (var i = 0; i < 2; i++){
+				document.getElementById(API_id3).innerHTML = '<h1 class="text-center card-header">Top 3 Reddit Posts</h1> &nbsp';
+				for (var i = 0; i < 3; i++){
 					console.log()
-					document.getElementById(API_id3).innerHTML += "<div class = 'jumbotron' > <img src='" + data_red[i].data.thumbnail + "' alt=' '><h4>" + data_red[i].data.title + "</h4> <a target='_blank' href ='https://www.reddit.com/" + data_red[i].data.permalink + "'>See Post</a></br> </div>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
+					document.getElementById(API_id3).innerHTML += "<div class = 'jumbotron reddit' > <img src='" + data_red[i].data.thumbnail + "' alt=' '><h4>" + data_red[i].data.title + "</h4> <a target='_blank' href ='https://www.reddit.com/" + data_red[i].data.permalink + "'>See Post</a></br> </div>";		//get title and link from reddit top, can be adjusted in format. To get author -> this.data.author/ get sub -> this.data.subreddit
 				}
 				document.getElementById(API_id3).innerHTML += '</ol>'
 			})
@@ -72,6 +72,7 @@ $(document).ready(function() {
 				$.getJSON('https://api.weather.gov/points/' + lat + ',' + long + '/forecast', function(data_weath){
 					//console.log(data_weath);
 					var in_HTML = '<h1 class="text-center card-header">Weather Forecast</h1>';
+					in_HTML += "&nbsp;"
 					in_HTML += "<div class='container'><div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[0].name + "</h3><p>" + data_weath.properties.periods[0].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[0].temperature + " F</p><p>Wind: " + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </p></div>";
 					in_HTML += "<div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[1].name + "</h3><p>" + data_weath.properties.periods[1].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[1].temperature + " F</p><p>Wind: " + data_weath.properties.periods[1].windSpeed + " " + data_weath.properties.periods[1].windDirection + " </p></div></div><br>";
 					in_HTML += "<div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[2].name + "</h3><p>" + data_weath.properties.periods[2].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[2].temperature + " F</p><p>Wind: " + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </p></div>";
