@@ -11,7 +11,8 @@ router.get('/', (req, res, next) => {
   .where('user.id',req.user.id)
   .then(rank=>{
   res.send(rank);
-}
+})
+.catch(err => next(err));
 })
 
 module.exports = router;
