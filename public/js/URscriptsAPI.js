@@ -73,10 +73,10 @@ $(document).ready(function() {
 					//console.log(data_weath);
 					var in_HTML = '<h1 class="text-center card-header">Weather Forecast</h1>';
 					in_HTML += "&nbsp;"
-					in_HTML += "<div class='container'><div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[0].name + "</h3><p>" + data_weath.properties.periods[0].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[0].temperature + " F</p><p>Wind: " + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </p></div>";
-					in_HTML += "<div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[1].name + "</h3><p>" + data_weath.properties.periods[1].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[1].temperature + " F</p><p>Wind: " + data_weath.properties.periods[1].windSpeed + " " + data_weath.properties.periods[1].windDirection + " </p></div></div><br>";
-					in_HTML += "<div class='row'><div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[2].name + "</h3><p>" + data_weath.properties.periods[2].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[2].temperature + " F</p><p>Wind: " + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </p></div>";
-					in_HTML += "<div class='card col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[3].name + "</h3><p>" + data_weath.properties.periods[3].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[3].temperature + " F</p><p>Wind: " + data_weath.properties.periods[3].windSpeed + " " + data_weath.properties.periods[3].windDirection + " </p></div></div></div>";
+					in_HTML += "<div class='container'><div class='row'><div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[0].name + "</h3><p>" + data_weath.properties.periods[0].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[0].temperature + " F</p><p>Wind: " + data_weath.properties.periods[0].windSpeed + " " + data_weath.properties.periods[0].windDirection + " </p></div>";
+					in_HTML += "<div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[1].name + "</h3><p>" + data_weath.properties.periods[1].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[1].temperature + " F</p><p>Wind: " + data_weath.properties.periods[1].windSpeed + " " + data_weath.properties.periods[1].windDirection + " </p></div></div><br>";
+					in_HTML += "<div class='row'><div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[2].name + "</h3><p>" + data_weath.properties.periods[2].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[2].temperature + " F</p><p>Wind: " + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </p></div>";
+					in_HTML += "<div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[3].name + "</h3><p>" + data_weath.properties.periods[3].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[3].temperature + " F</p><p>Wind: " + data_weath.properties.periods[3].windSpeed + " " + data_weath.properties.periods[3].windDirection + " </p></div></div></div>";
 					document.getElementById(API_id4).innerHTML = in_HTML;
 				})
 			})
@@ -87,7 +87,7 @@ $(document).ready(function() {
 			$.getJSON('https://api.tenor.com/v1/random?q=' + user_gif_pref + '&key=DUOD1ML0KJP3&limit=1&ar_range=standard',function(data_gif){
 				//console.log(data_gif);
 				document.getElementById(API_id5).innerHTML = '<h1 class="text-center card-header">Random GIF</h1> &nbsp';
-				document.getElementById(API_id5).innerHTML += "<div class='jumbotron text-center'><img src='" + data_gif.results[0].media[0].mediumgif.url + "' alt='" + data_gif.results[0].itemurl + "'></div>";
+				document.getElementById(API_id5).innerHTML += "<div class='jumbotron reddit text-center'><img src='" + data_gif.results[0].media[0].mediumgif.url + "' alt='" + data_gif.results[0].itemurl + "'></div>";
 			})
 		}
 	}
