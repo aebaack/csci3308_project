@@ -97,8 +97,12 @@ function letter_check(let) {
 			console.log("total time = " + total_time);
 			console.log("wrong_lets = " + wrong_lets);
 			var score = 50 - (total_time/1000) - wrong_lets;
-
-			$.post("/users/score", {"score": 100});
+			if (score >= 0) {
+				$.post("/users/score", {"score": score});
+			}
+			else {
+				$.post("/users/score", {"score": 0});
+			}
 
 			document.getElementById("modal-body").innerHTML = "<p>You earned " + Math.round(score) + " points.</p>";
 			var modal = document.getElementById('myModal');

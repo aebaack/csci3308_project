@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Score Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Nav bar with Log out -->
+    <nav class="navbar navbar-expand-lg">
+  		<span class="navbar-brand d-flex flex-fill">UpRight</span>
+      <div class="form-inline navbar-right">
+  			<span class="navbar-text d-flex flex-fill">User: <!--UserName--></span> <!--Should Link to Setting Page-->
+  			<form action="./URlogin.html"><!--Need to Clean Cookie and Log out-->
+				<button class="btn btn-outline-primary" type="submit" value="submit">Log Out</button>
+			</form>
+  		</div>
+	</nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" align="center">
+    <div class="card">
+      <div class="crad-header">
+        <h1 class="text-center card-header"> <b>Score Board</b> </h1>
+      </div>
+      <div class="container">
+      <div class = "table">
+        <table class="table">
+          <tr>
+            <th colspan="2"> Ranking </th>
+            <th colspan="4"> User Name </th>
+            <th colspan="2"> Time </th>
+            <th colspan="2"> Length </th>
+            <th colspan="2"> Score </th>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class ="container">
+      <br>
+      <br>
+      <br>
+      <form action="/ScoreBoard/Ranking" method="post">
+        <h1> Your Score for this game is: <span id="user_score"></span></h1>
+        <h1 id="Rank_info"></h1>
+        <br>
+        <button  style="float:right" type="submit" class="btn btn-success btn-inline">Submit</button>
+      </form>
+    </div>
+    <h5></h5>
+    </div>
+  </div>
+</html>
