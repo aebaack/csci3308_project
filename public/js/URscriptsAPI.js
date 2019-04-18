@@ -1,5 +1,9 @@
 
 $(document).ready(function() {
+	// Build tempIDArray
+	$.get('/users',(data)=>{
+    console.log(data);
+	});
 	//console.log("Hey");
 	// Google News: 0; quote: 1; NASA: 2; reddit: 3; weather: 4; gif: 5
 	var tempIdArray = [ 2, 4, 1, 5, 3, 0 ];
@@ -53,7 +57,7 @@ $(document).ready(function() {
 			API_id3 =  "API" + i;
 			$.getJSON('https://www.reddit.com/r/all/top.json',function(data_red1){
 				var data_red = data_red1.data.children;
-				console.log(data_red[1].data)
+				//console.log(data_red[1].data)
 				document.getElementById(API_id3).innerHTML = '<h1 class="text-center card-header">Top 3 Reddit Posts</h1> &nbsp';
 				for (var i = 0; i < 3; i++){
 					console.log()
@@ -83,7 +87,7 @@ $(document).ready(function() {
 		}
 		else if (tempIdArray[i] == 5 ) {
 			API_id5 =  "API" + i;
-			var user_gif_pref = "cat";
+			var user_gif_pref = "random";
 			$.getJSON('https://api.tenor.com/v1/random?q=' + user_gif_pref + '&key=DUOD1ML0KJP3&limit=1&ar_range=standard',function(data_gif){
 				//console.log(data_gif);
 				document.getElementById(API_id5).innerHTML = '<h1 class="text-center card-header">Random GIF</h1> &nbsp';
