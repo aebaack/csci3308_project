@@ -64,8 +64,9 @@ $(document).ready(function() {
 		}
 		else if (tempIdArray[i] == 4 ) {
 			API_id4 =  "API" + i;
-			var user_zip = '80304';
-			$.getJSON('https://api.geocod.io/v1.3/geocode?postal_code=' + user_zip + '&api_key=cc5dd5a9903e0669aaaad3de56c05cc6a3d8e3d',function(data_zip){
+			$.get('/users', (user_data) => {
+				var user_zip = user_data.zip_code;
+				$.getJSON('https://api.geocod.io/v1.3/geocode?postal_code=' + user_zip + '&api_key=cc5dd5a9903e0669aaaad3de56c05cc6a3d8e3d',function(data_zip){
 				//console.log(data_zip);
 				var lat = data_zip.results[0].location.lat;
 				var long = data_zip.results[0].location.lng;
@@ -78,12 +79,14 @@ $(document).ready(function() {
 					in_HTML += "<div class='row'><div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[2].name + "</h3><p>" + data_weath.properties.periods[2].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[2].temperature + " F</p><p>Wind: " + data_weath.properties.periods[2].windSpeed + " " + data_weath.properties.periods[2].windDirection + " </p></div>";
 					in_HTML += "<div class='card weather col-sm-4 mx-auto'><h3>" + data_weath.properties.periods[3].name + "</h3><p>" + data_weath.properties.periods[3].shortForecast + "</p><p>Temp: " + data_weath.properties.periods[3].temperature + " F</p><p>Wind: " + data_weath.properties.periods[3].windSpeed + " " + data_weath.properties.periods[3].windDirection + " </p></div></div></div>";
 					document.getElementById(API_id4).innerHTML = in_HTML;
+					})
 				})
 			})
+			
 		}
 		else if (tempIdArray[i] == 5 ) {
 			API_id5 =  "API" + i;
-			var user_gif_pref = "cat";
+			var user_gif_pref = "random";
 			$.getJSON('https://api.tenor.com/v1/random?q=' + user_gif_pref + '&key=DUOD1ML0KJP3&limit=1&ar_range=standard',function(data_gif){
 				//console.log(data_gif);
 				document.getElementById(API_id5).innerHTML = '<h1 class="text-center card-header">Random GIF</h1> &nbsp';
