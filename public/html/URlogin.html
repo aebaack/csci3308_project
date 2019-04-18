@@ -26,13 +26,13 @@
 
 	<!-- Main body of regestration form -->
 	<div class="container">
-		<form>
+		<form action="/users/login" method="POST">
 			<!-- Login Card -->
 			<div class="card col-sm-7 mx-auto cform">
 			  	<h1 class="text-center card-header">UpRight Login</h1>
 			  	<p class="lead text-center" >Welcome Back!</p>
 			  	<div class="form-group">
-					<label class="form-label"  for="emailAddress"><strong>Email address</strong></label>
+					<label class="form-label" for="emailAddress"><strong>Email address</strong></label>
 					<div class="">
 						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email" required>
 					</div>
@@ -40,7 +40,7 @@
 				<div class="form-group">
 					<label  class="form-label" for="password"><strong>Password</strong></label>
 					<div class="">
-						<input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password" required>
 					</div>
 				</div>
 				&nbsp;

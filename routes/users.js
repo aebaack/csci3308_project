@@ -25,6 +25,7 @@ router.post('/', (req, res, next) => {
           'email': emailAddress,
           'zip_code': zipCode,
           'hashed_password': hpass,
+          'score': 0,
           snooze,
         })
         .returning(['id', 'name', 'email', 'created_at', 'updated_at', 'snooze', 'zip_code'])
@@ -85,7 +86,7 @@ router.post('/login', (req, res, next) => {
         }
 
         delete user.hashed_password;
-        res.status(200).send(user);
+        res.redirect('/html/hangman.html');
       });
     }
   })(req, res, next);
@@ -129,7 +130,7 @@ router.post('/score', isLoggedIn, (req, res, next) => {
 })
 
 router.post('/update', isLoggedIn, (req, res, next) => {
-  const promises = []
+  const promises = [];
 
   if (req.body.api.length > 0) {
     promises.push(
@@ -205,7 +206,7 @@ router.post('/update', isLoggedIn, (req, res, next) => {
 
   Promise.all(promises)
     .then(v => {
-      res.redirect('/users');
+      res.redirect('/html/Setting_page.html');
     });
 });
 
