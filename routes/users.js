@@ -129,7 +129,7 @@ router.post('/score', isLoggedIn, (req, res, next) => {
 })
 
 router.post('/update', isLoggedIn, (req, res, next) => {
-  const promises = []
+  const promises = [];
 
   if (req.body.api.length > 0) {
     promises.push(
@@ -205,7 +205,7 @@ router.post('/update', isLoggedIn, (req, res, next) => {
 
   Promise.all(promises)
     .then(v => {
-      res.redirect('/users');
+      res.redirect('/html/Setting_page.html');
     });
 });
 
