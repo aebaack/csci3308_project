@@ -6,7 +6,12 @@ const knex = require('../knex');
 
 router.get('/', (req, res, next) => {
   // Insert request to get score
-  res.send('Scoreboard');
+  knex('users')
+  .select(['id','score'])
+  .where('user.id',req.user.id)
+  .then(rank=>{
+  res.send(rank);
+}
 })
 
 module.exports = router;
