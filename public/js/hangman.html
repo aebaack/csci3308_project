@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    	<title>HANGMAN</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../css/my_style.css" rel="stylesheet">  
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../js/hangman.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<br>
+		<div class="card">
+			<div class="card-header text-center"><h1 id="clue"></h1></div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table" id="puzz">
+						
+					</table>
+				</div>
+			</div> 
+
+			<div class="card-footer">
+				<div class="table-responsive">
+					<table class="table" id="keyboard">
+						
+					</table>
+				</div>
+			</div>
+		<br>	
+	</div>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+		  <div class="modal-header text-center">
+		    <h2>Congratulations! You've deactivated the alarm!</h2>
+		  </div>
+		  <div class="modal-body text-center" id="modal-body">
+		  </div>
+		  <div class="modal-footer">
+		  	<div class="table-responsive">
+				<table class="table">
+					<tr>
+						<td>
+							<a href="URapi.html" class="btn btn-primary text-left">Go to Today's Info</a>
+						</td>
+						<td>
+							<a href="alarm.html" class="btn btn-primary text-center">Return to Alarm</a>
+						</td>
+						<td>
+							<a href="#" class="btn btn-primary text-right">Check out the Scoreboard</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<audio id="my_audio" src="alarm.mp3" loop="loop" type="audio/ogg"></audio>
+	</body>
+</html>
