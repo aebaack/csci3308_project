@@ -85,7 +85,7 @@ router.post('/login', (req, res, next) => {
         }
 
         delete user.hashed_password;
-        res.status(200).send(user);
+        res.redirect('/html/hangman.html');
       });
     }
   })(req, res, next);
