@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="../js/ScoreBoard.js"></script>
+    <link href="../css/my_style.css" rel="stylesheet">
   </head>
   <body>
     <!-- Nav bar with Log out -->
@@ -33,15 +35,11 @@
       </div>
       <div class="container">
       <div class = "table">
-        <table class="table">
+        <table class="table" id="scoretable">
           <tr>
             <th colspan="2"> Ranking </th>
             <th colspan="4"> User Name </th>
-            <th colspan="2"> Time </th>
-            <th colspan="2"> Length </th>
-            <th colspan="2"> Score </th>
-          </tr>
-          <tr>
+            <th colspan="6"> Score </th>
           </tr>
         </table>
       </div>
@@ -51,7 +49,7 @@
       <br>
       <br>
       <form action="/ScoreBoard/Ranking" method="post">
-        <h1> Your Score for this game is: <span id="user_score"></span></h1>
+        <h1> Your Total Score is: <span id="user_score"></span></h1>
         <h1 id="Rank_info"></h1>
         <br>
         <button  style="float:right" type="submit" class="btn btn-success btn-inline">Submit</button>

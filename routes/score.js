@@ -7,8 +7,7 @@ const knex = require('../knex');
 router.get('/', (req, res, next) => {
   // Insert request to get score
   knex('users')
-  .select(['id','score'])
-  .where('user.id',req.user.id)
+  .select(['id','name','score'])
   .then(rank=>{
   res.send(rank);
 })
