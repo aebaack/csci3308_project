@@ -25,6 +25,7 @@ router.post('/', (req, res, next) => {
           'email': emailAddress,
           'zip_code': zipCode,
           'hashed_password': hpass,
+          'score': 0,
           snooze,
         })
         .returning(['id', 'name', 'email', 'created_at', 'updated_at', 'snooze', 'zip_code'])

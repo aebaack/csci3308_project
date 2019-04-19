@@ -12,22 +12,29 @@ body {
 }
 
 .card-img {
-  max-height: 25rem;
-  height: auto;
+  max-height: 600px;
+  max-width: 500px;
   width: auto;
-  margin: auto;
   border-radius: 30px;
   padding: 15px;
 }
 
 .card-header {
-  /*background-image: url("clouds2.jpg") */
+  /*background-image: url("texture1.jpg");
+  margin: none;
+  */
 }
 
 .card.back {
   background-image: url("texture1.jpg");
   background-size:200%;
   color:Black;
+}
+
+.card.weather{
+  background:none;
+  outline-style: ridge;
+
 }
 
 .card.cform {
@@ -53,10 +60,11 @@ body {
 }
 
 .jumbotron.jhead {
-  background-image: url("tiles.jpg"); 
+  background-image: url("sunrise3.png"); 
   background-size:100%;
+  background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: #122937;
   border-radius: 15px;
 }
 
@@ -69,9 +77,10 @@ body {
   height: auto;
   width: auto;
   margin: auto;
+  border-radius: 15px;
   padding: 15px;
-  max-height: 25rem;
-  max-width: 25rem;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 .navbar {

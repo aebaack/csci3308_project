@@ -1,35 +1,34 @@
 $(document).ready(()=>{
   var curUser;
-  $.get('/user',(user)=>{
+  $.get('/users',(user)=>{
     console.log(user);
     curUser=user.id;
+    console.log(curUser);
     $('#user_id').html(curUser);
   });
-  $.get('/score',(data)=>{
+  $.get('/scoreboard',(data)=>{
     console.log(data);
-    var text_script = $('#BoardTable').html($('#BoardTable').html()+'<tr>');
+    data.sort(function(a,b) {
+	return (b.score-a.score)
+	});
+    console.log(data);
     data.forEach(function(rank,idx){
+      var text_script = $('#scoretable').html($('#scoretable').html()+'<tr>');
       if(rank.id == curUser){
+	console.log(curUser);
         $('#user_score').html(rank.score);
-        $('#Rank_info').html("You are Ranking at #"+idx);
+        $('#Rank_info').html("You are Ranking at #"+(idx+1));
       }
-      else {
         text_script+='<td colspan="2">';
-        text_script+=rank.id;
+        text_script+=idx+1;
         text_script+='</td>';
         text_script+='<td colspan="4">';
-        text_script+=rank.username;
+        text_script+=rank.name;
         text_script+='</td>';
         text_script+='<td colspan="2">';
-        text_script+=rank.Time;
-        text_script+='</td>';
-        text_script+='<td colspan="2">';
-        text_script+=rank.Length;
-        text_script+='</td>';
-        text_script+='<td colspan="2">';
-        text_script+=rank.Score;
+        text_script+=rank.score;
         text_script+='</td></tr>';
-      }
+	$('#scoretable').html($('#scoretable').html() + text_script);
     });
   });
 });

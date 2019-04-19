@@ -10,7 +10,9 @@
 }
 
 body {
-  background-color: #153243;
+  background-image: url("clouds.jpg"); 
+  background-size:350%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 
@@ -21,8 +23,8 @@ body {
 #mtime .digits {
   display: inline;
   font-size: 200px;
-  background: #284B63;
-  color: #F4F9E9;
+  background-image: url("texture1.jpg");
+  color:  #2A4454;
   border-radius: 10px;
 }
 
@@ -33,7 +35,7 @@ body {
 
 #mtime .colon {
   display: inline;
-  color: #F4F9E9;
+  color:  #2A4454;
   font-size: 200px;
 }
 /* [CURRENT TIME] */
@@ -71,7 +73,7 @@ body {
   margin: 0 auto;
   max-width: 350px;
   padding: 10px;
-  background: #B4B8AB;
+  background-image: url("texture1.jpg");
   border-radius: 10px;
   white-space: nowrap;
 }
