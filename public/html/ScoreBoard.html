@@ -15,9 +15,28 @@
   <body>
     <!-- Nav bar with Log out -->
     <nav class="navbar navbar-expand-lg">
-  		<span class="navbar-brand d-flex flex-fill">UpRight</span>
+      <div class="navbar-brand d-flex flex-fill">
+  		<span>UpRight</span>
+      &emsp;
+        <form action="../html/alarm.html">
+          <button class="btn btn-outline-primary" type="submit"> Alarm </button>
+        </form>
+      &ensp;
+        <form action="../html/Setting_page.html">
+          <button class="btn btn-outline-primary" type="submit"> Setting </button>
+        </form>
+      &ensp;
+        <form action="../html/ScoreBoard.html">
+          <button class="btn btn-outline-primary" type="submit"> Score Board </button>
+        </form>
+      &ensp;
+        <form action="../html/URapi.html">
+          <button class="btn btn-outline-primary" type="submit"> Infomation </button>
+        </form>
+      </div>
       <div class="form-inline navbar-right">
-  			<span class="navbar-text d-flex flex-fill">User: <!--UserName--></span> <!--Should Link to Setting Page-->
+  			<span class="navbar-text d-flex flex-fill">User: <span id="username"> </span></span> <!--Should Link to Setting Page-->
+        &emsp;
   			<form action="./URlogin.html"><!--Need to Clean Cookie and Log out-->
 				<button class="btn btn-outline-primary" type="submit" value="submit">Log Out</button>
 			</form>
@@ -29,7 +48,7 @@
   <br>
   <br>
   <div class="container" align="center">
-    <div class="card">
+    <div class="card cform">
       <div class="crad-header">
         <h1 class="text-center card-header"> <b>Score Board</b> </h1>
       </div>
@@ -48,10 +67,10 @@
       <br>
       <br>
       <br>
-      <form action="/ScoreBoard/Ranking" method="post">
         <h1> Your Total Score is: <span id="user_score"></span></h1>
         <h1 id="Rank_info"></h1>
         <br>
+    <form action="../html/alarm.html">
         <button  style="float:right" type="submit" class="btn btn-success btn-inline">Submit</button>
       </form>
     </div>
