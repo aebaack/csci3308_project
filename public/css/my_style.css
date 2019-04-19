@@ -20,7 +20,9 @@ body {
 }
 
 .card-header {
-  /*background-image: url("clouds2.jpg") */
+  /*background-image: url("texture1.jpg");
+  margin: none;
+  */
 }
 
 .card.back {
@@ -62,12 +64,7 @@ body {
   background-size:100%;
   background-position: center;
   background-repeat: no-repeat;
-  color: White;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  color: #122937;
   border-radius: 15px;
 }
 
