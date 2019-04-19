@@ -99,12 +99,10 @@ function letter_check(let) {
 			var score = 50 - (total_time/1000) - wrong_lets;
 
 			$.get('/users', (user_data) => {
-				var new_score = Math.round(score) + user_data.score;
+				var old_score = user_data.score;
+				var new_score = Math.round(score) + old_score;
 				if (score >= 0) {
 					$.post("/users/score", {"score": new_score});
-				}
-				else {
-					$.post("/users/score", {"score": 0});
 				}
 			})
 
