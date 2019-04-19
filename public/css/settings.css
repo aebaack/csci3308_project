@@ -30,6 +30,11 @@ body {
 .card-header {
   font-size: 3rem;
   font-weight: bold;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-color: #212121;
+  color: white;
+  border: none;
 }
 
 .sub {
@@ -41,4 +46,9 @@ body {
 .alarm-icon {
   padding-bottom: 0.1em;
   padding-right: 0.2em;
+}
+
+.card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
