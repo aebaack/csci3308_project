@@ -1,3 +1,30 @@
+// const express = require('express');
+// const router = express.Router();
+// const knex = require('../knex');
+// const bcrypt = require('bcrypt');
+// const passport = require('../auth/local');
+
+
+
+// converts seconds to hour:min:sec format
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10);
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+}
+
+// router.get('/', isLoggedIn, (req, res, next) => {
+//   knex('users')
+//     .select(['snooze'])
+//     .where('users.id', req.user.id)
+// });
+
 var ac = {
   init : function () {
   // ac.init() : start the alarm clock
@@ -51,6 +78,7 @@ var ac = {
     return num;
   },
 
+
   tick : function () {
   // ac.tick() : update the current time
 
@@ -63,7 +91,15 @@ var ac = {
     // Update current clock
     ac.chr.innerHTML = hr;
     ac.cmin.innerHTML = min;
-    ac.csec.innerHTML = sec;
+    // ac.csec.innerHTML = sec;
+
+    // Update the timeLeft div
+
+    //console.log(String(hrToSeconds-1).toHHMMSS());
+    var tMinus = document.getElementById("timeLeft").innerHTML;
+    var tMinusToDisplay = parseInt(tMinus)-1;
+    document.getElementById("timeLeft").innerHTML = parseInt(tMinus)-1;
+    document.getElementById("timeLeftDisplay").innerHTML = String(tMinusToDisplay).toHHMMSS();
 
     // Check and sound alarm
     if (ac.alarm != null) {
@@ -87,6 +123,15 @@ var ac = {
     ac.ths.disabled = true;
     ac.tset.disabled = true;
     ac.treset.disabled = false;
+
+    // document.getElementById("timeLeft").innerHTML = ac.thr.value+":"+ac.thm.value+":"+ac.ths.value;
+
+    var hrToSeconds = parseInt(ac.thr.value)*60*60;
+    var minToSeconds = parseInt(ac.thm.value)*60;
+    var sToSeconds = parseInt(ac.ths.value);
+
+    document.getElementById("timeLeft").innerHTML = String(hrToSeconds+minToSeconds+sToSeconds);
+
   },
 
   reset : function () {
@@ -101,6 +146,10 @@ var ac = {
     ac.ths.disabled = false;
     ac.tset.disabled = false;
     ac.treset.disabled = true;
+
+    document.getElementById("timeLeft").innerHTML = 0;
+    document.getElementById("timeLeftDisplay").innerHTML = 00+":"+00+":"+00;
+
   }
 };
 
