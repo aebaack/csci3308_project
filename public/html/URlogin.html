@@ -1,65 +1,78 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>UpRight Login Page</title>
-    <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link href="../css/my_style.css" rel="stylesheet">
-  </head>
-  <body>
-  	<!-- Nav bar with sign in option -->
-  	<nav class="navbar navbar-expand-lg">
-  		<span class="navbar-brand d-flex flex-fill">UpRight</span>
-  		<div class="form-inline navbar-right">
-  			<span class="navbar-text d-flex flex-fill">Don't Have an Account? &nbsp </span>
-			<form action="../index.html">
-				<button class="btn btn-outline-primary" type="submit" value="submit">Sign Up!</button>
-			</form>
-  		</div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>UpRight Login Page</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!-- <link href="../css/my_style.css" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Karla|Rubik+Mono+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../css/settings.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Nav bar with sign in option -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container">
+			<a class="navbar-brand" href="/"><i class="material-icons align-middle alarm-icon">alarm</i>UpRight</a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="/">Registration</a>
+					<a class="nav-item nav-link active" href="#">Login</a>
+				</div>
+			</div>
+			<div class="form-inline navbar-right">
+				<a class="btn btn-outline-primary" href="/" role="button">Register</a>
+			</div>
+		</div>
 	</nav>
-    <br>
-	<br>
 
 	<!-- Main body of regestration form -->
 	<div class="container">
-		<form action="/users/login" method="POST">
-			<!-- Login Card -->
-			<div class="card col-sm-7 mx-auto cform">
-			  	<h1 class="text-center card-header">UpRight Login</h1>
-			  	<p class="lead text-center" >Welcome Back!</p>
-			  	<div class="form-group">
-					<label class="form-label" for="emailAddress"><strong>Email address</strong></label>
-					<div class="">
-						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email" required>
+		<div class="card">
+			<h1 class="text-center card-header">UpRight Login</h1>
+			<div class="card-body">
+				<form action="/users/login" method="POST">
+					<!-- Login Card -->
+					<!-- <div class="card col-sm-7 mx-auto cform"> -->
+					<br>
+					<p class="lead text-center">Welcome Back!</p>
+					<div class="form-group">
+						<label class="title" for="emailAddress">Email Address</label>
+						<input type="email" class="form-control" id="emailAddress" name="emailAddress"
+							placeholder="Enter Email Address" required>
 					</div>
-			   	</div>
-				<div class="form-group">
-					<label  class="form-label" for="password"><strong>Password</strong></label>
-					<div class="">
-						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password" required>
+					<div class="form-group">
+						<label class="title" for="password">Password</label>
+						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst"
+							placeholder="Enter Password" required>
 					</div>
-				</div>
-				&nbsp;
-				<div class="form-group">
-				<!-- Submit info -->
-					<input type="submit" value="Sign In" class="btn btn-primary btn-block">
-
-				</div>
-				&nbsp;
-				<div class="row">
-					<h6 class="card-subtitle mb-2 col-sm-3" style="color:White">Need to sign up?</h6>
-					<a href="../index.html" class="card-subtitle card-link" style="color:White"><strong>Register Here</strong></a>
-				</div>
+					<button type="submit" class="btn btn-outline-primary btn-block text-uppercase sub">Log In</button>
+					<br>
+					<div class="row">
+						<h6 class="card-subtitle mb-2 col-sm-3" style="color: black;">Need to sign up?</h6>
+						<a href="/" class="card-subtitle card-link" style="color: #0A61FE;"><strong>Register
+								Here</strong></a>
+					</div>
+				</form>
 			</div>
-		</form>
+		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+	</script>
 	<script src="../js/URscripts.js"></script>
 </body>
+
 </html>
