@@ -1,13 +1,14 @@
 body {
   /* background: linear-gradient(0deg,#FEC36F 0%, #7890A5 100%) fixed; */
-  background-image: url("../img/sunset.jpg");
+  background-image: url("clouds.jpg");
   background-repeat: no-repeat;
   background-size: 200%;
   font-family: 'Karla', sans-serif;
 }
 
 .navbar {
-  background: #181B1E;
+  background: none;
+  border-bottom: 3px solid black;
 }
 
 .navbar-brand {

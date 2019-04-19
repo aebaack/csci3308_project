@@ -132,7 +132,7 @@ router.post('/score', isLoggedIn, (req, res, next) => {
 router.post('/update', isLoggedIn, (req, res, next) => {
   const promises = [];
 
-  if (req.body.api.length > 0) {
+  if (req.body.api && req.body.api.length > 0) {
     promises.push(
       knex('user_api')
         .del()
