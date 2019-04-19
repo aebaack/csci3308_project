@@ -152,6 +152,18 @@ router.post('/update', isLoggedIn, (req, res, next) => {
     );
   }
 
+  if (req.body.zipcode) {
+    promises.push(
+      knex('users')
+        .update({
+          zip_code: req.body.zipcode
+        }, '*')
+        .where('users.id', req.user.id)
+        .then(user => {
+          return true;
+        })
+    )
+  }
 
   if (req.body.passwordThird) {
     promises.push(
