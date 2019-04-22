@@ -1,10 +1,13 @@
 $(document).ready(()=>{
   var curUser;
+  var UserRank = 0;
   $.get('/users',(user)=>{
     console.log(user);
     curUser=user.id;
+    $('#username').html(user.name);
     console.log(curUser);
     $('#user_id').html(curUser);
+    $('#user_score').html(user.score);
   });
   $.get('/scoreboard',(data)=>{
     console.log(data);
@@ -14,11 +17,8 @@ $(document).ready(()=>{
     console.log(data);
     data.forEach(function(rank,idx){
       var text_script = $('#scoretable').html($('#scoretable').html()+'<tr>');
-      if(rank.id == curUser){
-	console.log(curUser);
-        $('#user_score').html(rank.score);
-        $('#Rank_info').html("You are Ranking at #"+(idx+1));
-      }
+	if(curUser == rank.id)
+		$('#Rank_info').html('You Are Ranking at #' + (idx+1));
         text_script+='<td colspan="2">';
         text_script+=idx+1;
         text_script+='</td>';

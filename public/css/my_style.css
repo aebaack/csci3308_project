@@ -1,9 +1,9 @@
 /* General CSS */
 
 body {
-  background-image: url("clouds.jpg"); 
-  background-size:350%;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-image: linear-gradient(LightGrey,SkyBlue,rgb(205,165,243));
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 75px;
 }
 
 .card {
@@ -26,9 +26,9 @@ body {
 }
 
 .card.back {
-  background-image: url("texture1.jpg");
-  background-size:200%;
-  color:Black;
+  /*background-image: url("texture1.jpg");*/
+  background-image: linear-gradient(White,rgb(205,165,243));  
+  color: #122937;
 }
 
 .card.weather{
@@ -38,18 +38,19 @@ body {
 }
 
 .card.cform {
-  background-image: url("tiles.jpg"); 
-  background-size:200%;
+  /*background-image: url("tiles.jpg"); */
+  /*background-image: linear-gradient(White,rgb(205,165,243));*/
+  background: White;
   background-repeat:round;
-  color: white;
+  color: #122937;
   border-radius: 15px;
 }
 
 .card.c2form {
-  background-image: url("tiles.jpg"); 
-  background-size:100%;
+  /*background-image: url("tiles.jpg"); */
+  /*background-image: linear-gradient(rgb(205,165,243),LightSalmon,rgb(255,163,51));*/
   background-repeat:no-repeat;
-  color: white;
+  color: #122937;
   border-radius: 15px;
 }
 
@@ -60,10 +61,8 @@ body {
 }
 
 .jumbotron.jhead {
-  background-image: url("sunrise3.png"); 
-  background-size:100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(rgb(205,165,243),LightSalmon,rgb(255,163,51));
+  /*background-image: url("sunrise3.png"); */
   color: #122937;
   border-radius: 15px;
 }
@@ -94,7 +93,7 @@ body {
 
 .navbar-brand {
   font-size:25px;
-  color:white;
+  color: #122937;
   font-weight: 1000;
 }
 
@@ -154,7 +153,7 @@ body {
   column-gap: 1rem;
   div {
     width: 150px;
-    color: white;
+    color: black;
     margin: 0 1rem 1rem 0;
     display: inline-block;
     width: 100%;

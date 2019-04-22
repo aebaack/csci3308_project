@@ -10,9 +10,14 @@
 }
 
 body {
+<<<<<<< HEAD
   background-image: url("clouds.jpg");
   background-size:350%;
   font-family: "Comic Sans MS", cursive, sans-serif;
+=======
+  background-image: linear-gradient(LightGrey,SkyBlue,rgb(205,165,243));
+  font-family: Arial, Helvetica, sans-serif;
+>>>>>>> b0554abc7dbf91fd5f92081aa7dea620aa6bd80c
 }
 
 
@@ -23,7 +28,7 @@ body {
 #mtime .digits {
   display: inline;
   font-size: 200px;
-  background-image: url("texture1.jpg");
+  background-image: linear-gradient(White,rgb(205,165,243));
   color:  #2A4454;
   border-radius: 10px;
 }
@@ -73,7 +78,7 @@ body {
   margin: 0 auto;
   max-width: 550px;
   padding: 10px;
-  background-image: url("texture1.jpg");
+  background-image: linear-gradient(White,rgb(205,165,243));
   border-radius: 10px;
   white-space: nowrap;
 }
