@@ -1,10 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-// const knex = require('../knex');
-// const bcrypt = require('bcrypt');
-// const passport = require('../auth/local');
-
-
 
 // converts seconds to hour:min:sec format
 String.prototype.toHHMMSS = function () {
@@ -19,11 +12,13 @@ String.prototype.toHHMMSS = function () {
     return hours+':'+minutes+':'+seconds;
 }
 
-// router.get('/', isLoggedIn, (req, res, next) => {
-//   knex('users')
-//     .select(['snooze'])
-//     .where('users.id', req.user.id)
-// });
+var toggleTimer = false;
+var mySnoozeTime;
+$(document).ready(() => {
+  $.get('/users', (user_data) => {
+    mySnoozeTime = user_data.snooze;
+  })
+})
 
 var ac = {
   init : function () {
@@ -39,17 +34,25 @@ var ac = {
     document.getElementById("tpick-h").appendChild(ac.thr);
     ac.thm = ac.createSel(59);
     document.getElementById("tpick-m").appendChild(ac.thm);
-    ac.ths = ac.createSel(59);
-    document.getElementById("tpick-s").appendChild(ac.ths);
+    // **ONLY UNCOMMENT FOR TESTING**
+    // ac.ths = ac.createSel(59);
+    // document.getElementById("tpick-s").appendChild(ac.ths);
 
     // The time picker - Set, reset
     ac.tset = document.getElementById("tset");
     ac.tset.addEventListener("click", ac.set);
+    ac.tsnooze = document.getElementById("tsnooze");
+    ac.tsnooze.addEventListener("click", ac.snooze);
     ac.treset = document.getElementById("treset");
     ac.treset.addEventListener("click", ac.reset);
 
     // The alarm sound
     ac.sound = document.getElementById("alarm-sound");
+
+    // Hide the countdown timer
+
+    document.getElementById("timeLeft").style.display = "none";
+    document.getElementById("timeLeftDisplay").innerHTML = "00:00:00";
 
     // Start the clock
     ac.alarm = null;
@@ -96,10 +99,21 @@ var ac = {
     // Update the timeLeft div
 
     //console.log(String(hrToSeconds-1).toHHMMSS());
-    var tMinus = document.getElementById("timeLeft").innerHTML;
-    var tMinusToDisplay = parseInt(tMinus)-1;
-    document.getElementById("timeLeft").innerHTML = parseInt(tMinus)-1;
-    document.getElementById("timeLeftDisplay").innerHTML = String(tMinusToDisplay).toHHMMSS();
+    if (toggleTimer){
+      var tMinus = document.getElementById("timeLeft").innerHTML;
+      var tMinusToDisplay = parseInt(tMinus)-1;
+      document.getElementById("timeLeft").innerHTML = parseInt(tMinus)-1;
+      document.getElementById("timeLeftDisplay").innerHTML = String(tMinusToDisplay).toHHMMSS();
+      if (parseInt(tMinusToDisplay) == 0){
+        window.location.href = "../html/hangman.html";
+      }
+    }else{
+      document.getElementById("timeLeftDisplay").innerHTML = "00:00:00";
+    }
+
+
+
+
 
     // Check and sound alarm
     if (ac.alarm != null) {
@@ -108,7 +122,7 @@ var ac = {
         if (ac.sound.paused) {
           // ac.sound.play();
           // REDIRECT INSTEAD OF PLAY Alarm
-          window.location.href = "../html/APItest.html";
+          window.location.href = "../html/hangman.html";
         }
       }
     }
@@ -116,6 +130,7 @@ var ac = {
 
   set : function () {
   // ac.set() : set the alarm
+    toggleTimer = true;
 
     ac.alarm = ac.thr.value + ac.thm.value + ac.ths.value;
     ac.thr.disabled = true;
@@ -130,12 +145,31 @@ var ac = {
     var minToSeconds = parseInt(ac.thm.value)*60;
     var sToSeconds = parseInt(ac.ths.value);
 
-    document.getElementById("timeLeft").innerHTML = String(hrToSeconds+minToSeconds+sToSeconds);
+    // Current time
+    var now = new Date();
+    var hr = ac.padzero(now.getHours());
+    var min = ac.padzero(now.getMinutes());
+    var sec = ac.padzero(now.getSeconds());
+
+    var currentTime = (parseInt(hr)*60*60)+(parseInt(min)*60+parseInt(sec));
+    var setTime = hrToSeconds+minToSeconds+sToSeconds;  // Time alarm will go off
+    var difTime = setTime-currentTime;  // Time until alarm goes off
+
+
+
+    if (difTime < 0){
+      difTime = difTime+(24*60*60)
+    }
+    document.getElementById("timeLeft").innerHTML = String(difTime);
+
+
 
   },
 
   reset : function () {
   // ac.reset() : reset the alarm
+
+    toggleTimer = false;
 
     if (!ac.sound.paused) {
       ac.sound.pause();
@@ -150,6 +184,11 @@ var ac = {
     document.getElementById("timeLeft").innerHTML = 0;
     document.getElementById("timeLeftDisplay").innerHTML = 00+":"+00+":"+00;
 
+  },
+
+  snooze : function () {
+    toggleTimer = true;
+    document.getElementById("timeLeft").innerHTML = String(mySnoozeTime*60);
   }
 };
 

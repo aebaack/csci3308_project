@@ -22,7 +22,7 @@ $(document).ready(() => {
 		var i = 0;
 		var ind = 0;
 		var row = "";
-		while (puzz.length > 1){ 
+		while (puzz.length > 1){
 			i = 0;
 			while (i<15 && i<puzz.length) {
 				if (puzz[i] == ' ') {
@@ -52,17 +52,17 @@ $(document).ready(() => {
 		i=0;
 		row += "<tr>";
 		for (i=0; i<9; i++) {
-			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";					
+			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";
 		}
 		row += "</tr>";
 		row += "<tr>";
 		for (i=9; i<18; i++) {
-			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";					
+			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";
 		}
 		row += "</tr>";
 		row += "<tr>";
 		for (i=18; i<26; i++) {
-			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";					
+			row += "<td><button type='button' class='btn btn-success active' id='" + alph[i] + "' onclick='letter_check(\"" + alph[i] + "\")'><h3>" + alph[i] + "</h3></button></td>";
 		}
 		row += "</tr>";
 		$("#keyboard").html(row);

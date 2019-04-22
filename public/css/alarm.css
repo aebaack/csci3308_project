@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url("clouds.jpg"); 
+  background-image: url("clouds.jpg");
   background-size:350%;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -71,7 +71,7 @@ body {
 /* [TIME PICKER] */
 #tpick {
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 550px;
   padding: 10px;
   background-image: url("texture1.jpg");
   border-radius: 10px;
@@ -92,14 +92,19 @@ body {
   font-weight: bold;
   margin: 20px 0;
 }
-#tset, #treset {
+#tset, #treset, #tsnooze {
   box-sizing: padding-box;
-  width: 50%;
+  width: 33%;
   background: #3368b2;
   color: #fff;
   padding: 10px;
   border: 0;
   cursor: pointer;
+}
+#timeLeftDisplay, #timeLeftText {
+  text-align: center;
+  font-size:18px;
+
 }
 #tset:disabled, #treset:disabled {
   background: #aaa;
