@@ -76,11 +76,11 @@ $(document).ready(function() {
 				'country=us&' +
 				'apiKey=85582d6364bb492ca683e9cf18d34dd3';
 				$.ajax({url:url_gn , dataType:"json"}).then(function(data_gn) {
-					//console.log(data_gn); //Review all of the data returned
+					console.log(data_gn); //Review all of the data returned
 
 					document.getElementById(API_id0).innerHTML = '<h1 class="text-center card-header">Google News</h1> &nbsp';
 
-					document.getElementById(API_id0).innerHTML += '<img class="card-img-top" src="' + data_gn.articles[0].urlToImage + '" alt="gImg"> &nbsp';
+					document.getElementById(API_id0).innerHTML += '<img class="card-img-top" src="' + data_gn.articles[0].urlToImage + '" alt= "No Image For This Story"> &nbsp';
 
 					document.getElementById(API_id0).innerHTML += '<h5 class="card-title text-center">' + data_gn.articles[0].title + '</h5>';
 					document.getElementById(API_id0).innerHTML += '<p> Learn More: </p>';
