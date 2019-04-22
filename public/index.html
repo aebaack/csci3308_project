@@ -27,47 +27,47 @@
 	<!-- Main body of regestration form -->
 	<div class="container">
 		<!-- Header Card -->
-		<div class="card c2form">
+		<div class="card back">
 		  <h1 class="text-center card-header">UpRight Registration</h1>
 		  <h6 class="lead text-center">Welcome to UpRight!</h6>
 		</div>
 		<br>
 		<!-- User info -->
-		<div class = "card back">
+		<div class = "card cform">
 			<form action="/users" method="post">
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label" for="fullName">Full Name</label>
+					<label class="col-sm-2 col-form-label" for="fullName"><strong>Full Name</strong></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name" required>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label  class="col-sm-2 col-form-label" for="zipCode">Zip Code</label>
+					<label  class="col-sm-2 col-form-label" for="zipCode"><strong>Zip Code</strong></label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Enter Zip Code" required>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label"  for="emailAddress">Email Address</label>
+					<label class="col-sm-2 col-form-label"  for="emailAddress"><strong>Email Address</strong></label>
 					<div class="col-sm-10">
 						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter Email" required>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label  class="col-sm-2 col-form-label" for="passwordFirst">Password</label>
+					<label  class="col-sm-2 col-form-label" for="passwordFirst"><strong>Password</strong></label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password" required>
 					</div>
 				</div>
 				<div class="form-group row">
-					<label  class="col-sm-2 col-form-label" for="passwordConfirm">Confirm Password</label>
+					<label  class="col-sm-2 col-form-label" for="passwordConfirm"><strong>Confirm Password</strong></label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" required>
 					</div>
 				</div>
 				<!-- User prefrences -->
 				<div class="form-group row">
-					<label  class="col-sm-2 col-form-label" for="snoozeSelect">Snoooze Length</label>
+					<label  class="col-sm-2 col-form-label" for="snoozeSelect"><strong>Snoooze Length</strong></label>
 					<div class="col-sm-2">
 						<div class="form-check">
 						  <input class="form-check-input" onclick="" type="radio" name="snooze" id="snooze" value="5" required>
@@ -93,7 +93,7 @@
 					</small>
 				</div>
 				<div class="form-group row">
-					<label  class="col-sm-2 col-form-label" for="intrestSelect">Interests</label>
+					<label  class="col-sm-2 col-form-label" for="intrestSelect"><strong>Interests</strong></label>
 					<div class="col-sm-2">
 						<div class="form-check">
 						  <input class="form-check-input" type="checkbox" name="api" value="1" id="api">
@@ -131,12 +131,6 @@
 									Random GIF
 								</label>
 							</div>
-					  	<!-- <div class="form-check">
-						  <input class="form-check-input" onclick="noIntrests('intrest1','intrest2','intrest3','intrest4')" type="checkbox" value="" id="intrestN">
-						  <label class="form-check-label" for="intrestN">
-						    None
-						  </label>
-					  	</div> -->
 				  	</div>
 				  	<small id="snoozeHelp" class="form-text text-muted row col-sm-2">
 						Your selection here will help us populate your custom home page
