@@ -2,9 +2,8 @@
 
 body {
   background-image: linear-gradient(LightGrey,SkyBlue,rgb(205,165,243));
-  /*background-image: linear-gradient(rgb(230,243,255),DodgerBlue);*/
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  background-size:100%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 75px;
 }
 
 .card {
@@ -29,7 +28,7 @@ body {
 .card.back {
   /*background-image: url("texture1.jpg");*/
   background-image: linear-gradient(White,rgb(205,165,243));  
-  color:Black;
+  color: #122937;
 }
 
 .card.weather{
@@ -40,7 +39,8 @@ body {
 
 .card.cform {
   /*background-image: url("tiles.jpg"); */
-  background-image: linear-gradient(White,rgb(205,165,243));
+  /*background-image: linear-gradient(White,rgb(205,165,243));*/
+  background: White;
   background-repeat:round;
   color: #122937;
   border-radius: 15px;
@@ -48,7 +48,7 @@ body {
 
 .card.c2form {
   /*background-image: url("tiles.jpg"); */
-  background-image: linear-gradient(rgb(205,165,243),LightSalmon,rgb(255,163,51));
+  /*background-image: linear-gradient(rgb(205,165,243),LightSalmon,rgb(255,163,51));*/
   background-repeat:no-repeat;
   color: #122937;
   border-radius: 15px;

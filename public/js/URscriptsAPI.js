@@ -101,10 +101,10 @@ $(document).ready(function() {
 				API_id2 =  "API" + i;
 				var url_NASA  = "https://api.nasa.gov/planetary/apod?api_key=aOGxRi5jcDnftQ8diN3uxun03nqaiP0leeYbJUvu"
 				$.ajax({url:url_NASA , dataType:"json"}).then(function(data_NASA) {
-					//console.log(data_NASA);
+					console.log(data_NASA);
 					document.getElementById(API_id2).innerHTML = '<h1 class="text-center card-header">NASA Pic of The Day</h1> &nbsp';
 					document.getElementById(API_id2).innerHTML += '<h5 class="card-title text-center">' + data_NASA.title + '</h5>';
-					document.getElementById(API_id2).innerHTML += '<img class="card-img" src="' + data_NASA.hdurl + '" alt="gImg"> &nbsp';
+					document.getElementById(API_id2).innerHTML += '<img class="card-img" src="' + data_NASA.hdurl + '" alt="Video Today Visit: '+ data_NASA.url + '"> &nbsp';
 					document.getElementById(API_id2).innerHTML += '<p>' + data_NASA.explanation + '</p>';
 				})
 			}
