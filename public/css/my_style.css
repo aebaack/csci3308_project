@@ -3,7 +3,7 @@
 body {
   background-image: linear-gradient(LightGrey,SkyBlue,rgb(205,165,243));
   font-family: Arial, Helvetica, sans-serif;
-  
+  padding-bottom: 75px;
 }
 
 .card {
