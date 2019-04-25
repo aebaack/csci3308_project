@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="../css/my_style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/extras.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -16,19 +19,23 @@
 
 <body>
   <!-- Nav bar with Log out -->
-  <nav class="navbar navbar-expand-lg">
-    <span class="navbar-brand d-flex flex-fill">UpRight</span>
-    <div class="form-inline navbar-right">
-      <span id="user" class="navbar-text d-flex flex-fill">User:
-        <!--UserName--></span>
-      <!--Should Link to Setting Page-->
-      <form action="/users/logout">
-        <!--Need to Clean Cookie and Log out-->
-        <button class="btn btn-outline-primary" type="submit" value="submit">Log Out</button>
-      </form>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="material-icons align-middle alarm-icon">alarm</i>UpRight</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/html/alarm.html">Alarm</a>
+          <a class="nav-item nav-link" href="/html/urapi.html">Information</a>
+          <a class="nav-item nav-link" href="/html/scoreboard.html">Scoreboard</a>
+          <a class="nav-item nav-link active" href="#">Settings</a>
+        </div>
+      </div>
+      <div class="form-inline navbar-right">
+        <span id="user">User: None</span>
+        <a class="btn btn-outline-primary" href="/users/logout" role="button">Log Out</a>
+      </div>
     </div>
   </nav>
-  <br>
   <br>
   <div class="container">
     <div class="card back">
@@ -144,4 +151,5 @@
   </div>
   <script src="../js/settings.js"></script>
 </body>
+
 </html>
