@@ -111,7 +111,7 @@ body {
   font-size:18px;
 
 }
-#tset:disabled, #treset:disabled {
+#tset:disabled, #treset:disabled, #tsnooze:disabled {
   background: #aaa;
   color: #888;
 }

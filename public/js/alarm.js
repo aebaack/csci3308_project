@@ -34,9 +34,8 @@ var ac = {
     document.getElementById("tpick-h").appendChild(ac.thr);
     ac.thm = ac.createSel(59);
     document.getElementById("tpick-m").appendChild(ac.thm);
-    // **ONLY UNCOMMENT FOR TESTING**
-    // ac.ths = ac.createSel(59);
-    // document.getElementById("tpick-s").appendChild(ac.ths);
+    ac.ths = ac.createSel(59);
+    document.getElementById("tpick-s").appendChild(ac.ths);
 
     // The time picker - Set, reset
     ac.tset = document.getElementById("tset");
@@ -137,6 +136,7 @@ var ac = {
     ac.thm.disabled = true;
     ac.ths.disabled = true;
     ac.tset.disabled = true;
+    document.getElementById("tsnooze").disabled = true;
     ac.treset.disabled = false;
 
     // document.getElementById("timeLeft").innerHTML = ac.thr.value+":"+ac.thm.value+":"+ac.ths.value;
@@ -179,6 +179,7 @@ var ac = {
     ac.thm.disabled = false;
     ac.ths.disabled = false;
     ac.tset.disabled = false;
+    document.getElementById("tsnooze").disabled = false;
     ac.treset.disabled = true;
 
     document.getElementById("timeLeft").innerHTML = 0;
@@ -189,6 +190,9 @@ var ac = {
   snooze : function () {
     toggleTimer = true;
     document.getElementById("timeLeft").innerHTML = String(mySnoozeTime*60);
+    document.getElementById("tsnooze").disabled = true;
+    ac.treset.disabled = false;
+    ac.tset.disabled = true;
   }
 };
 
