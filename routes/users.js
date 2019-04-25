@@ -60,7 +60,7 @@ router.post('/', (req, res, next) => {
           passport.authenticate('local', (err, user, info) => {
             if (user) {
               req.logIn(user, (err) => {
-                return res.redirect('/html/hangman.html');
+                return res.redirect('/html/alarm.html');
               })
             }
           })(req, res, next);
@@ -86,7 +86,7 @@ router.post('/login', (req, res, next) => {
         }
 
         delete user.hashed_password;
-        res.redirect('/html/hangman.html');
+        res.redirect('/html/alarm.html');
       });
     }
   })(req, res, next);
