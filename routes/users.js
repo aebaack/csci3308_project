@@ -218,7 +218,7 @@ router.post('/update', isLoggedIn, (req, res, next) => {
 
   Promise.all(promises)
     .then(v => {
-      res.redirect('/html/Setting_page.html');
+      res.redirect('/html/setting_page.html');
     });
 });
 
