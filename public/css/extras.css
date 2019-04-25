@@ -1,0 +1,11 @@
+nav {
+  border-bottom: 1px solid gray;
+}
+
+.navbar-brand {
+  font-family: "Rubik Mono One";
+}
+
+i {
+  margin-right: 0.3rem;
+}
