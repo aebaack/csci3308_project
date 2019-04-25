@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>UpRight Daily Updates</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../css/my_style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../css/extras.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Nav bar with sign in option -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container">
+			<a class="navbar-brand" href="/"><i class="material-icons align-middle alarm-icon">alarm</i>UpRight</a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="/html/alarm.html">Alarm</a>
+					<a class="nav-item nav-link active" href="#">Information</a>
+					<a class="nav-item nav-link" href="/html/scoreboard.html">Scoreboard</a>
+					<a class="nav-item nav-link" href="/html/setting_page.html">Settings</a>
+				</div>
+			</div>
+			<div class="form-inline navbar-right">
+				<a class="btn btn-outline-primary" href="/users/logout" role="button">Log Out</a>
+			</div>
+		</div>
+	</nav>
+	<br>
+
+	<!-- Main body of regestration form -->
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid jhead">
+			<h1 class="text-center display-4">Good Morning!</h1>
+			<p class="text-center"><strong> Congrats on solving the puzzle, and welcome to your personalized info screen!
+					Click on a window below for a full screen view.</strong></p>
+		</div>
+
+		<div class="masonry-with-columns">
+			<div id="API0" class="card back" onclick="openNav0()">
+			</div>
+
+			<div id="API1" class="card back" onclick="openNav1()">
+			</div>
+
+			<div id="API2" class="card back" onclick="openNav2()">
+			</div>
+
+			<div id="API3" class="card back" onclick="openNav3()">
+			</div>
+
+			<div id="API4" class="card back" onclick="openNav4()">
+			</div>
+
+			<div id="API5" class="card back" onclick="openNav5()">
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="myNav0" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav0()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API0z" class="card back">
+			</div>
+		</div>
+	</div>
+
+	<div id="myNav1" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API1z" class="card back">
+			</div>
+		</div>
+	</div>
+
+	<div id="myNav2" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API2z" class="card back">
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="myNav3" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API3z" class="card back">
+			</div>
+		</div>
+	</div>
+
+	<div id="myNav4" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API4z" class="card back">
+			</div>
+		</div>
+	</div>
+
+	<div id="myNav5" class="overlay">
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<div id="API5z" class="card back">
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+	</script>
+	<script src="../js/URscriptsAPI.js"></script>
+
+</body>
+
+</html>

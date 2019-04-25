@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      Javascript Alarm Clock Demo
-    </title>
-    <link href="../css/alarm.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../js/alarm.js"></script>
 
+<head>
+  <title>
+    Javascript Alarm Clock Demo
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="../css/alarm.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="../js/alarm.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/my_style.css" rel="stylesheet">
+  <link href="../css/extras.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <!-- [CURRENT TIME] -->
-    <!-- <div id="ctime">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="material-icons align-middle alarm-icon">alarm</i>UpRight</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Alarm</a>
+          <a class="nav-item nav-link" href="/html/urapi.html">Information</a>
+          <a class="nav-item nav-link" href="/html/scoreboard.html">Scoreboard</a>
+          <a class="nav-item nav-link" href="/html/setting_page.html">Settings</a>
+        </div>
+      </div>
+      <div class="form-inline navbar-right">
+        <a class="btn btn-outline-primary" href="/users/logout" role="button">Log Out</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <!-- [CURRENT TIME] -->
+  <!-- <div id="ctime">
       <h1 class="header">THE CURRENT TIME</h1>
       <div class="square">
         <div class="digits" id="chr">00</div>
@@ -27,48 +53,53 @@
         <div class="text">SEC</div>
       </div>
     </div> -->
-    <div id="mtime">
-      <div class="digits" id="chr">00</div>
-      <div class="colon" id="col">:</div>
-      <div class="digits" id="cmin">00</div>
-    </div>
+  <div id="mtime">
+    <div class="digits" id="chr">00</div>
+    <div class="colon" id="col">:</div>
+    <div class="digits" id="cmin">00</div>
+  </div>
 
-    <!-- SPACING -->
-    <div id="tpick_space"></div>
+  <!-- SPACING -->
+  <div id="tpick_space"></div>
 
-    <!-- [SET ALARM] -->
-    <div id="tpick">
-      <h1 class="header">
-        SET ALARM
-      </h1>
-      <div id="tpick-h"></div>
-      <div id="tpick-m"></div>
-      <div id="tpick-s"></div>
-      <div>
-        <input type="button" value="Set" id="tset"/>
-        <input type="button" value="Snooze" id="tsnooze"/>
-        <input type="button" value="Reset" id="treset" disabled/>
-      </div>
+  <!-- [SET ALARM] -->
+  <div id="tpick">
+    <h1 class="header">
+      SET ALARM
+    </h1>
+    <div id="tpick-h"></div>
+    <div id="tpick-m"></div>
+    <div id="tpick-s"></div>
+    <div>
+      <input type="button" value="Set" id="tset" />
+      <input type="button" value="Snooze" id="tsnooze" />
+      <input type="button" value="Reset" id="treset" disabled />
     </div>
-    <br>
-    <br>
-    <div id="timeLeftText">
-      Time Left:
-    </div>
-    <div id="timeLeft">
-      timeLeft
-    </div>
+  </div>
+  <br>
+  <br>
+  <div id="timeLeftText">
+    Time Left:
+  </div>
+  <div id="timeLeft">
+    timeLeft
+  </div>
 
-    <div id="timeLeftDisplay">
-      timeLeftDisplay
-    </div>
+  <div id="timeLeftDisplay">
+    timeLeftDisplay
+  </div>
 
-    <!-- [ALARM SOUND] -->
-    <audio id="alarm-sound" loop>
-      <source src="alarm.mp3" type="audio/mp3">
-    </audio>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  </body>
+  <!-- [ALARM SOUND] -->
+  <audio id="alarm-sound" loop>
+    <source src="alarm.mp3" type="audio/mp3">
+  </audio>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
