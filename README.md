@@ -15,7 +15,7 @@ To find the deployed website, follow [this link](https://csci-hangman.herokuapp.
 From here, follow the simple registration form in order to create your account. The interests that you select at the bottom of the form will be displayed on an information screen after you have completed the hangman game.
 
 Here is an example form:
-![homepage](/readme/alarm.png)
+![homepage](/readme/registration.png)
 
 #### Setting an Alarm
 Once you have created an account, you will be brought to the alarm. The current time will display at the top of the screen, and there will be three separate dropdown menus below for setting the hour, minute, and second that you want the alarm to go off. Select the time that you want the alarm to go off, then click "Set."
@@ -27,26 +27,26 @@ Alternatively, you can also click on the "Snooze" button to have the alarm go of
 #### Hangman
 You will be presented with a puzzle with several of the letters filled in. Your goal is to select the correct letters in order to fill in the rest of the puzzle. If you select an incorrect letter, then it will turn red and will no longer be selectable. Correct letters will turn green. Once you have completed the puzzle, you will be given a score based on your performance, and this score will factor in to your placement on the leaderboards. To find this, click on the scoreboard button after you have completed the game.
 
-![homepage](/readme/alarm.png)
+![homepage](/readme/hangman.png)
 
 #### Scoreboard
 The scoreboard displays the score for all of the users on the site, and you can also find your current score and placement at the bottom of the page. You can improve your score by correctly answering more puzzles.
 
-![homepage](/readme/alarm.png)
+![homepage](/readme/scoreboard.png)
 
 Now let's look at the Information page, which will populate with the interests that you selected when you first registered.
 
 #### Information
 On this page, you will see several different sources of information such as Google News and the top three posts on Reddit. The interests that you have selected will display on top, and the other information will be displayed near the bottom. You can click on an information screen in order to have it open in full screen, allowing you to see all of the details. 
 
-![homepage](/readme/alarm.png)
+![homepage](/readme/information.png)
 
 Finally, you can go the to Settings page by using the navigation bar at the top of the page. 
 
 #### Settings Page
 The settings page will initially populate with your currently selected snooze time and interests. On this screen, you can change your snooze time, interests, and password. Once you have changed these fields to your desired values, simply click the submit button, and the page will reload with your new selections.
 
-![homepage](/readme/alarm.png)
+![homepage](/readme/settings.png)
 
 ## Setting Up a Local Site
 #### Database Instructions
@@ -84,7 +84,7 @@ The settings page will initially populate with your currently selected snooze ti
   * In another Terminal window, type `npm test` at the root of the folders
 * If everything worked correctly, you should see all of the tests pass
 
-![homepage](/readme/alarm.png)
+![homepage](/readme/tests.png)
 
 ## Documentation
 #### Folders
