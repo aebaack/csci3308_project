@@ -20,7 +20,7 @@ Here is an example form:
 #### Setting an Alarm
 Once you have created an account, you will be brought to the alarm. The current time will display at the top of the screen, and there will be three separate dropdown menus below for setting the hour, minute, and second that you want the alarm to go off. Select the time that you want the alarm to go off, then click "Set."
 
-Alternatively, you can also click on the "Snooze" button to have the alarm go off after waiting for the amount of time that you set in your registration form. You can see the time left in the alarm at the bottom of the screen. Once the alarm goes off, you will be redirecting to the hangman game.
+Alternatively, you can also click on the "Snooze" button to have the alarm go off after waiting for the amount of time that you set in your registration form. You can see the time left in the alarm at the bottom of the screen. Once the alarm goes off, you will be redirected to the hangman game.
 
 ![homepage](/readme/alarm.png)
 
@@ -41,7 +41,7 @@ On this page, you will see several different sources of information such as Goog
 
 ![homepage](/readme/information.png)
 
-Finally, you can go the to Settings page by using the navigation bar at the top of the page. 
+Finally, you can go to the Settings page by using the navigation bar at the top of the page. 
 
 #### Settings Page
 The settings page will initially populate with your currently selected snooze time and interests. On this screen, you can change your snooze time, interests, and password. Once you have changed these fields to your desired values, simply click the submit button, and the page will reload with your new selections.
@@ -70,7 +70,7 @@ The settings page will initially populate with your currently selected snooze ti
   * `knex seed:run`
     * This adds new rows into the tables based on the information in the seeds folder
   * `echo "SECRET_KEY=asdf" > .env`
-    * This adds a key for passport.js to work. This key is not secure when setup this way, but it provides an example
+    * This adds a key for passport.js to work. This key is not secure when set up this way, but it provides an example
   * `node server.js`
 * The server will now be running
 * Navigate to `localhost:3000` in the browser to view the site
@@ -81,7 +81,7 @@ The settings page will initially populate with your currently selected snooze ti
   * `npm install -g mocha`
 * Now that Mocha has been globally installed, you can begin to run tests
   * Run `node server.js` in order to get a local server started
-  * In another Terminal window, type `npm test` at the root of the folders
+  * In another Terminal window, type `npm test` at the root of the project
 * If everything worked correctly, you should see all of the tests pass
 
 ![homepage](/readme/tests.png)
@@ -103,7 +103,7 @@ The settings page will initially populate with your currently selected snooze ti
 * `routes`
   * Holds the server routes `users`, `score`, and `hangman`. How to use them can be found below.
 * `seeds`
-  * Stores the files that knex uses to populate the database tables. There is a file for each table holding the rows to add.
+  * Stores the files that Knex uses to populate the database tables. There is a file for each table holding the rows to add.
 * `test`
   * Stores test files that are run by Mocha when testing the server
 
@@ -165,3 +165,7 @@ The settings page will initially populate with your currently selected snooze ti
       * snooze: Integer of the new snooze time
   * `DELETE /users` - Deletes the currently logged in user from the database
     * Returns the deleted user's information
+
+## Additional Repositories
+* [Project Milestones](https://github.com/aebaack/csci3308_milestones)
+* [Team Meeting Logs](https://github.com/aebaack/csci3308_meetings)
