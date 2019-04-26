@@ -104,42 +104,6 @@ describe('User routes', () => {
     });
   });
 
-  // Need to determine correct way to save cookies so that user is logged in during
-  // future requests
-
-  // describe('Update User Information (Post /users/update)', () => {
-  //   before((done) => {
-  //     request.post('http://localhost:3000/users/login', {
-  //       form: {
-  //         'emailAddress': 'aidan@3308.com',
-  //         'passwordFirst': 'password',
-  //       }
-  //     }, (err, res, body) => {
-  //       console.log('here');
-  //       if (err) {
-  //         done(err);
-  //       } else {
-  //         console.log('hereee');
-  //         if (body.includes('Redirecting to /html/alarm.html')) {
-  //           done();
-  //         } else {
-  //           done(new Error('Did not log in user'));
-  //         }
-  //       }
-  //     });
-  //   });
-
-  //   it('should update user snooze time', (done) => {
-  //     request.post('http://localhost:3000/users/update', {
-  //       form: {
-  //         'snooze': 10,
-  //       }
-  //     }, (err, res, body) => {
-        
-  //     });
-  //   });
-  // })
-
   describe('Other route functionality', () => {
     it('should not allow user information to be acquired without logging in', (done) => {
       request('http://localhost:3000/users', (err, res, body) => {
