@@ -1,8 +1,5 @@
 'use strict';
 
-const assert = require('assert');
-const expect = require('chai').expect;
-const should = require('chai').should();
 const request = require('request');
 
 describe('User routes', () => {
